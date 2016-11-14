@@ -1,6 +1,6 @@
 ## BasketAmongUs 
 
-#### Introduction
+### **Introduction**
 
 This is my final project in SkyLab Coders Academy during a full-stack web development bootcamp in Barcelona.
 
@@ -8,7 +8,7 @@ The very first aim of this project is to create an application which helps to fi
 
 As it's the very beginning of this project , this content will be uptdated in the next three weeks.
 
-#### Technologies used
+### **Technologies used**
 
 To structure this application web it will be used some technologies : 
     In the FrontEnd side :
