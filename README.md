@@ -10,17 +10,19 @@ As it's the very beginning of this project , this content will be uptdated in th
 
 ### **Technologies used**
 
-To structure this application web it will be used some technologies : 
+To structure this application web it will be used some technologies:
+    
     In the FrontEnd side :
-        - HTML 5
-        - CSS 3
-        - Bootstrap
-        - Angular        
+        * HTML 5
+        * CSS 3
+        * Bootstrap
+        * Angular
+                
     And in the BackEnd : 
-        - Node Js
-        - Express
-        - MongoDB
-        - Firebase
+        * Node Js
+        * Express
+        * MongoDB
+        * Firebase
 
 This will be the initial software that I pretend to use. However, all this content is sensitive to be changed.
 
