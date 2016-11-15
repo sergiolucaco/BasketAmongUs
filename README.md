@@ -8,7 +8,14 @@ The very first aim of this project is to create an application which helps to fi
 
 As it's the very beginning of this project , this content will be uptdated in the next three weeks.
 
-### **Technologies used**
+### **Firsts objectives to achieve**
+
+    * App to be able to search basketball courts.
+    * App to allow us to search basketball courts around you.
+    * Filter that search by category of court ( outside/indoors).
+    * Learn about how works google maps API
+
+### **Technologies will be used**
 
 To structure this application web it will be used some technologies:
     
@@ -16,7 +23,7 @@ To structure this application web it will be used some technologies:
         * HTML 5
         * CSS 3
         * Bootstrap
-        * Angular
+        * Angular / Pug (template engine) ?
                 
     And in the BackEnd : 
         * Node Js
@@ -29,4 +36,4 @@ This will be the initial software that I pretend to use. However, all this conte
 
 
 
-Last Updated : 14/11
+Last Updated : 15/11
