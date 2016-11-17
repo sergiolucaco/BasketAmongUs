@@ -28,7 +28,10 @@ mongo.connect(url, (err,db)=>{
 	// })
 
 	app.get('/',(req,res)=>{
-		res.render("index", {title : 'Home'})
+		db.collection('basketcourts')
+			.find()
+			.toArray()
+			.then( courts => res.render("index", {title : 'Home', courts}))
 	})
 
 	app.get('/courts',(req,res)=>{
@@ -36,10 +39,24 @@ mongo.connect(url, (err,db)=>{
 			.find()
 			.toArray()
 			.then( courts => res.render('courts',{courts}))
+			console.log(courts)
 		
 	})
 
+	app.get('/api/courts',(req,res)=>{
+		db.collection('basketcourts')
+			.find()
+			.toArray()
+			.then( courts => res.json( courts) )
+		
+	})
+
+
 	app.post('/addCourts',(req,res)=>{
+		debugger;
+		var dataPost = JSON.parse(req.body);
+		console.log(dataPost);
+		
 		var newCourt = req.body;
 		console.log(newCourt)
 		db.collection('basketcourts')
