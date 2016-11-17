@@ -12,4 +12,5 @@
       #courtsample { 
         border: 1px solid red;
         width: fit-content ;
+        display: inline-flex;
       }

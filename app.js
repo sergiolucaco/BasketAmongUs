@@ -10,7 +10,9 @@ const url = 'mongodb://localhost:27017/basket_among_us'
 
 app.set('view engine', 'pug')
 app.use(express.static('public') )
+
 app.use( bodyparser.urlencoded( { extended: false } ) )
+app.use(bodyparser.json())
 
 
 mongo.connect(url, (err,db)=>{
@@ -39,7 +41,7 @@ mongo.connect(url, (err,db)=>{
 			.find()
 			.toArray()
 			.then( courts => res.render('courts',{courts}))
-			console.log(courts)
+			
 		
 	})
 
@@ -53,9 +55,6 @@ mongo.connect(url, (err,db)=>{
 
 
 	app.post('/addCourts',(req,res)=>{
-		debugger;
-		var dataPost = JSON.parse(req.body);
-		console.log(dataPost);
 		
 		var newCourt = req.body;
 		console.log(newCourt)
