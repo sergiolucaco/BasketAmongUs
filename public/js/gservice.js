@@ -27,8 +27,8 @@ angular.module('gservice', [])
             locations = [];
 
             // Set the selected lat and long equal to the ones provided on the refresh() call
-            selectedLat = latitude;
-            selectedLong = longitude;
+            selectedLat = +latitude;
+            selectedLong = +longitude;
 
             // Perform an AJAX call to get all of the records in the db.
             $http.get('/api/courts').success(function(response){
@@ -61,7 +61,7 @@ angular.module('gservice', [])
 
                 // Converts each of the JSON records into Google Maps Location format (Note [Lat, Lng] format).
                 locations.push({
-                    latlon: new google.maps.LatLng(court.location[1], court.location[0]),
+                    latlon: new google.maps.LatLng(+court.location[1], +court.location[0]),
                     message: new google.maps.InfoWindow({
                         content: contentString,
                         maxWidth: 320

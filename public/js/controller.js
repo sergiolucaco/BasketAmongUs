@@ -34,7 +34,7 @@ const mapCtrl = angular.module('mapCtrl',['gservice']);
 	        var courtData = {
 	            courtname: $scope.formData.courtname,
 	            address: $scope.formData.address,
-	            location: [$scope.formData.longitude, $scope.formData.latitude],
+	            location: [+$scope.formData.longitude, +$scope.formData.latitude],
 	            
 	        };
 
@@ -46,7 +46,6 @@ const mapCtrl = angular.module('mapCtrl',['gservice']);
 	                $scope.formData.courtname = "";
 	                $scope.formData.address ="";
 
-	                gservice.refresh($scope.formData.latitude, $scope.formData.longitude);
 	                console.log(data);
 	            })
 	            .error(function (data) {
