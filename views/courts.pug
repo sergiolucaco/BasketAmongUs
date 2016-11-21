@@ -1,8 +1,0 @@
-extends layout
-block content
-	.container.theme-showcase(role='main')
-		each court in courts
-			div#courtsample
-				img(src="#")
-				p Name : #{court.courtname}
-				p Adress : #{court.adress[0].street}

@@ -1,16 +1,3 @@
-/*  html, body {
-        height: 100%;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-      }*/
-      #basketball_court {
-        height: 100%;
-        width: 100%;
-      }
-
-      #courtsample { 
-        border: 1px solid red;
-        width: fit-content ;
-        display: inline-flex;
-      }
+#map_courts {
+	height: 385px;
+}
