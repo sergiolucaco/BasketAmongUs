@@ -5,6 +5,10 @@ angular.module('myBasketApp', ['ngRoute','mapCtrl','gservice'])
 				templateUrl: '/views/home.html',
 				controller : 'mapCtrl'
 			})
+			.when('/searchCourts',{
+				templateUrl: '/views/searchCourts.html'
+			})
 			.otherwise({redirectTo: '/'});
+
 			
 	})

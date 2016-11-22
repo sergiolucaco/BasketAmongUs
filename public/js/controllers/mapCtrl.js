@@ -27,7 +27,7 @@ const mapCtrl = angular.module('mapCtrl',['gservice']);
 
 			    // Functions
 	    // ----------------------------------------------------------------------------
-	    // Creates a new user based on the form fields
+	    // Creates a new court based on the form fields
 	    $scope.createCourt = function() {
 
 	        // Grabs all of the text box fields
@@ -35,16 +35,19 @@ const mapCtrl = angular.module('mapCtrl',['gservice']);
 	            courtname: $scope.formData.courtname,
 	            address: $scope.formData.address,
 	            location: [+$scope.formData.longitude, +$scope.formData.latitude],
+	            tipology: $scope.formData.cover,
 	            
 	        };
 
-	        // Saves the user data to the db
+	        // Saves the court data to the db
 	        $http.post('/api/courts', courtData)
 	            .success(function (data) {
 
 	                // Once complete, clear the form (except location)
 	                $scope.formData.courtname = "";
 	                $scope.formData.address ="";
+	                $scope.formData.cover="";
+
 	                gservice.refresh($scope.formData.latitude, $scope.formData.longitude);
 	                console.log(data);
 	            })

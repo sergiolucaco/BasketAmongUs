@@ -41,41 +41,7 @@ angular.module('gservice', [])
             }).error(function(){});
         };
 
-        // Private Inner Functions
-        // --------------------------------------------------------------
-        // Convert a JSON of users into map points
-        var convertToMapPoints = function(response){
-
-            // Clear the locations holder
-            var locations = [];
-            // var infoWindow = new google.maps.InfoWindow();
-            // Loop through all of the JSON entries provided in the response
-            for(var i= 0; i < response.length; i++) {
-                var court = response[i];
-
-                // Create popup windows for each record
-                var  contentString =
-                    '<p><b>Courtname</b>: ' + court.courtname +
-                    '<br><b>Address</b>: ' + court.address +
-                    '</p>';
-
-                // Converts each of the JSON records into Google Maps Location format (Note [Lat, Lng] format).
-                locations.push({
-                    latlon: new google.maps.LatLng(+court.location[1], +court.location[0]),
-                    message: new google.maps.InfoWindow({
-                        content: contentString,
-                        maxWidth: 320
-                    }),
-                    courtname: court.courtname,
-                    address: court.address,
-                    
-            });
-        }
-        // location is now an array populated with records in Google Maps format
-        return locations;
-    };
-
-// Initializes the map
+        // Initializes the map
 var initialize = function(latitude, longitude) {
 
     // Uses the selected lat, long as starting point
@@ -107,6 +73,7 @@ var initialize = function(latitude, longitude) {
             // When clicked, open the selected marker's message
             currentSelectedMarker = n;
             n.message.open(map, marker);
+            
         });
     });
 
@@ -148,6 +115,9 @@ var initialize = function(latitude, longitude) {
     });
 
 };
+
+
+
 
 // Refresh the page upon window load. Use the initial latitude and longitude
 google.maps.event.addDomListener(window, 'load',
