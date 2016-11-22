@@ -48,7 +48,7 @@ angular.module('gservice', [])
 
             // Clear the locations holder
             var locations = [];
-
+            // var infoWindow = new google.maps.InfoWindow();
             // Loop through all of the JSON entries provided in the response
             for(var i= 0; i < response.length; i++) {
                 var court = response[i];
@@ -91,7 +91,7 @@ var initialize = function(latitude, longitude) {
             clickableIcons : false
         });
     }
-
+    message = new google.maps.InfoWindow();
     // Loop through each location in the array and place a marker
     locations.forEach(function(n, i){
         var marker = new google.maps.Marker({

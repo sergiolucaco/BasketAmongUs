@@ -45,7 +45,7 @@ const mapCtrl = angular.module('mapCtrl',['gservice']);
 	                // Once complete, clear the form (except location)
 	                $scope.formData.courtname = "";
 	                $scope.formData.address ="";
-
+	                gservice.refresh($scope.formData.latitude, $scope.formData.longitude);
 	                console.log(data);
 	            })
 	            .error(function (data) {
