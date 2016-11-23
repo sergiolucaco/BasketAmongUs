@@ -1,6 +1,6 @@
 // Dependencies
 var mongoose        = require('mongoose');
-var Court           = require('./model.js');
+var Court           = require('../models/courtSchema.js');
 
 // Opens App Routes
 module.exports = function(app) {

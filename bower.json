@@ -1,0 +1,22 @@
+{
+  "name": "basket_among_us",
+  "description": "This is my final project in SkyLab Coders Academy during a full-stack web development bootcamp in Barcelona.",
+  "main": "app.js",
+  "authors": [
+    "Sergio Lucas <sergioluk@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/sergiolucaco/BasketAmongUs",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ngmap": "^1.17.8",
+    "angularjs-geolocation": "^0.1.1"
+  }
+}

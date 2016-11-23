@@ -1,14 +1,14 @@
         // Private Inner Functions
         // --------------------------------------------------------------
         // Convert a JSON of users into map points
-        var convertToMapPoints = function(response){
+        var convertToMapPoints = function( courts ){
 
             // Clear the locations holder
             var locations = [];
             // var infoWindow = new google.maps.InfoWindow();
-            // Loop through all of the JSON entries provided in the response
-            for(var i= 0; i < response.length; i++) {
-                var court = response[i];
+            // Loop through all of the JSON entries provided in the courts
+            for(var i= 0; i < courts.length; i++) {
+                var court = courts[i];
 
                 // Create popup windows for each record
                 var  contentString =

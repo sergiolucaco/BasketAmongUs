@@ -2,7 +2,7 @@
 var mongoose    = require('mongoose');
 var Schema      = mongoose.Schema;
 
-// Creates a User Schema. This will be the basis of how user data is stored in the db
+// Creates a court Schema. This will be the basis of how user data is stored in the db
 var courtSchema = new Schema({
     courtname: {type: String, required: true},
     address: {type: String, required: true},
@@ -25,5 +25,5 @@ courtSchema.pre('save', function(next){
 // Indexes this schema in 2dsphere format (critical for running proximity searches)
 courtSchema.index({location: '2dsphere'});
 
-// Exports the UserSchema for use elsewhere. Sets the MongoDB collection to be used as: "scotch-users"
+// Exports the UserSchema for use elsewhere. Sets the MongoDB collection to be used as: "basketcourtsample"
 module.exports = mongoose.model('basketcourtsample', courtSchema);
