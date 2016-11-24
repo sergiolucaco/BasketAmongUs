@@ -7,5 +7,9 @@ angular.module('ServicesModule')
     						.then( d => d.data )
     	}
 
-    	return { getAllCourts }
+    	function addCourt( oCourt ) {
+    		return $http.post('/api/courts', oCourt)	
+    	}
+    	 
+    	return { getAllCourts, addCourt }
     })

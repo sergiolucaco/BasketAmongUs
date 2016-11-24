@@ -1,5 +1,7 @@
 angular.module('ControllersModule')
-	.controller('mapCtrl', function($rootScope,$scope,$http,MapService){
+	.controller('mapCtrl', function($rootScope, $scope, MapService, DataService){
+
+		console.log("mapCtrl...")
 
 		$scope.formData = {};
 
@@ -11,6 +13,19 @@ angular.module('ControllersModule')
 
 		$scope.formData.latitude = 41.379;
 		$scope.formData.longitude = 2.1729; 
+
+
+		DataService.getAllCourts()
+		    .then( courts => {
+		        $rootScope.courts = courts;
+		        return MapService.getHomeMap()
+		    })
+		    .then( map => {
+
+		        const locations = MapService.convertToMapPoints ( $rootScope.courts );
+		        const markers = locations.map( MapService.createMarker.bind(null, map) );
+		        MapService.zoomToIncludeMarkers( map, locations )
+		    })
 
 				// Get coordinates based on mouse click. When a click event is detected....
 		$rootScope.$on("clicked", function(){
@@ -57,24 +72,30 @@ angular.module('ControllersModule')
 	            address: $scope.formData.address,
 	            location: [+$scope.formData.longitude, +$scope.formData.latitude],
 	            tipology: $scope.formData.cover,
-	            
 	        };
 
-	        // Saves the court data to the db
-	        $http.post('/api/courts', courtData)
-	            .success(function (data) {
+	        const latlon = new google.maps.LatLng(+courtData.location[1], +courtData.location[0]);
 
-	                // Once complete, clear the form (except location)
+	        // Saves the court data to the db
+	        DataService.addCourt( courtData )
+	        	.then( data => {
+
+	        		// Once complete, clear the form (except location)
 	                $scope.formData.courtname = "";
 	                $scope.formData.address ="";
 	                $scope.formData.cover="";
 
-	                MapService.refresh($scope.formData.latitude, $scope.formData.longitude);
+					MapService.getHomeMap()
+						.then( map => {
+							MapService.createMarker( map, { latlon } )
+						})
+
+	                // MapService.refresh($scope.formData.latitude, $scope.formData.longitude);
 	                console.log(data);
-	            })
-	            .error(function (data) {
-	                console.log('Error: ' + data);
-	            });
+
+	        	})
+	        	.catch( console.log  )
+	        
 	    };
 
 		
