@@ -12,6 +12,7 @@ let app = express();
 
 
 app.use(express.static('public') )
+
 app.use( bodyparser.urlencoded( { extended: false } ) )
 app.use(bodyparser.json())
 

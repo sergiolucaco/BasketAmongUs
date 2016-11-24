@@ -5,16 +5,17 @@ angular.module('ControllersModule')
 
 		$scope.formData = {};
 
-		var coords = {};
-		var lat = 0;
-		var long = 0;
-
-
-
 		$scope.formData.latitude = 41.379;
 		$scope.formData.longitude = 2.1729; 
 
+		var coords = {};
 
+		var lat = 0;
+		var long = 0;
+
+		//Read all the documents listed on the collection DB and return the map created in MapService. The next step
+		// is read that map and transform data to be readable inside google maps and add markers in every location.
+		//The last step is needed to center the map to see all the markers.
 		DataService.getAllCourts()
 		    .then( courts => {
 		        $rootScope.courts = courts;
@@ -27,19 +28,9 @@ angular.module('ControllersModule')
 		        MapService.zoomToIncludeMarkers( map, locations )
 		    })
 
-				// Get coordinates based on mouse click. When a click event is detected....
-		$rootScope.$on("clicked", function(){
+			
 
-		    // // Run the MapService functions associated with identifying coordinates
-		    // $scope.$apply(function(){
-		    //     $scope.formData.latitude = parseFloat(MapService.clickLat).toFixed(3);
-		    //     $scope.formData.longitude = parseFloat(MapService.clickLong).toFixed(3);
-		        
-		    // });
-
-		});
-
-
+		// Capture current coords at the end of the marker event "dragend" and put those values in the inputs.
 		$scope.getCurrentCoords = function (e) {
 			$scope.pos = this.getPosition();
      		$scope.formData.latitude = $scope.pos.lat().toFixed(3);
@@ -66,14 +57,16 @@ angular.module('ControllersModule')
 	    // Creates a new court based on the form fields
 	    $scope.createCourt = function() {
 
+	        
+
 	        // Grabs all of the text box fields
 	        var courtData = {
 	            courtname: $scope.formData.courtname,
 	            address: $scope.formData.address,
 	            location: [+$scope.formData.longitude, +$scope.formData.latitude],
-	            tipology: $scope.formData.cover,
+	            tipology: $scope.formData.cover
 	        };
-
+	        
 	        const latlon = new google.maps.LatLng(+courtData.location[1], +courtData.location[0]);
 
 	        // Saves the court data to the db
@@ -87,10 +80,10 @@ angular.module('ControllersModule')
 
 					MapService.getHomeMap()
 						.then( map => {
-							MapService.createMarker( map, { latlon } )
+							MapService.createMarker( map, { latlon } ) //Create a marker with the location captured in the form field
 						})
 
-	                // MapService.refresh($scope.formData.latitude, $scope.formData.longitude);
+	                
 	                console.log(data);
 
 	        	})
