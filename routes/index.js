@@ -11,7 +11,9 @@ module.exports = function(app) {
     app.get('/api/courts', function(req, res){
 
         // Uses Mongoose schema to run the search (empty conditions)
-        var query = Court.find({});
+        var query = Court.find({}).sort({created_at: -1});
+
+
         query.exec(function(err, courts){
             if(err)
                 res.send(err);

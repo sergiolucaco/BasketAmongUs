@@ -13,12 +13,6 @@ angular.module('ServicesModule')
         var selectedLat = 41.379799;
         var selectedLong =  2.1729903;
 
-
-
-        // Handling Clicks and location selection
-        // googleMapService.clickLat  = 0;
-        // googleMapService.clickLong = 0;
-
        
         function getHomeMap () {
             return NgMap.getMap({ id: 'home-map' })

@@ -2,6 +2,8 @@ const express = require ('express');
 const bodyparser = require('body-parser');
 const mongoose = require('mongoose');
 
+mongoose.Promise = global.Promise;
+
 const db = require('./db');
 
 const PORT = 3000;
