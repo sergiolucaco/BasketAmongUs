@@ -2,7 +2,9 @@
 <!-- Google Map -->
     <div class="col-md-7">
         <div id="map_courts">
-           <ng-map id="search-map" ></ng-map>
+           <ng-map id="search-map"  center ="41.379799,2.1729903">
+             <marker position="41.379799,2.1729903" animation="" title="You're here"></marker>
+           </ng-map>
         </div>
     </div>
     <!-- queryForm.html -->
@@ -42,11 +44,11 @@
                     <label>Tipology</label>
                     <div class="form-group">
                         <label class="radio-inline">
-                            <input type="radio" name="optionsRadios" id="radiocovered" value="Covered" ng-model="formData.cover" ng-true-value = "'Covered'">
+                            <input type="radio" name="optionsRadios" id="Covered" value="Covered" ng-model="formData.covered" ng-true-value = "'Covered'">
                             Covered
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" name="optionsRadios" id="radiouncovered" value="Uncovered" ng-model="formData.uncover" ng-true-value="'Uncovered'">
+                            <input type="radio" name="optionsRadios" id="Uncovered" value="Uncovered" ng-model="formData.uncovered" ng-true-value="'Uncovered'">
                             Uncovered
                         </label>
                      

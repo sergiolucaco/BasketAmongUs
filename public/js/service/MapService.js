@@ -1,10 +1,13 @@
 // Creates the gservice factory. This will be the primary means by which we interact with Google Maps
 angular.module('ServicesModule')
     .factory('MapService', function($rootScope, NgMap, DataService){
+        //This service interacts and deals with google maps API.
 
         // Initialize Variables
         // -------------------------------------------------------------
         // Service our factory will return
+
+        
 
         // Array of locations obtained from API calls
         var locations = [];
@@ -13,15 +16,17 @@ angular.module('ServicesModule')
         var selectedLat = 41.379799;
         var selectedLong =  2.1729903;
 
-       
+       // Generate home map .
         function getHomeMap () {
             return NgMap.getMap({ id: 'home-map' })
         }
 
+        // Generate search map .
          function getSearchMap () {
             return NgMap.getMap({ id: 'search-map' })
         }
 
+        // Include all the markers in the map and center into their location.
         function zoomToIncludeMarkers( map, locations ) {
             const bounds = new google.maps.LatLngBounds();
 
@@ -30,6 +35,8 @@ angular.module('ServicesModule')
             map.fitBounds(bounds);
         };
 
+
+        //Create a new marker in every location listed in DB.
         function createMarker (map, location) {
 
             var marker = new google.maps.Marker({

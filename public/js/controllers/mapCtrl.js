@@ -1,5 +1,5 @@
 angular.module('ControllersModule')
-	.controller('mapCtrl', function($rootScope, $scope, MapService, DataService){
+	.controller('mapCtrl', function($rootScope, $scope, MapService, DataService, geolocation){
 
 		console.log("mapCtrl...")
 
@@ -31,7 +31,7 @@ angular.module('ControllersModule')
 			
 
 		// Capture current coords at the end of the marker event "dragend" and put those values in the inputs.
-		$scope.getCurrentCoords = function (e) {
+		$rootScope.getCurrentCoords = function (e) {
 			$scope.pos = this.getPosition();
      		$scope.formData.latitude = $scope.pos.lat().toFixed(3);
      		$scope.formData.longitude = $scope.pos.lng().toFixed(3);

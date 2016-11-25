@@ -14,6 +14,7 @@ angular.module('myBasketApp', [
 		})
 		.when('/searchCourts',{
 			templateUrl: '/views/searchCourts.html',
+			controller: 'searchCtrl'
 			
 		})
 		.otherwise({
