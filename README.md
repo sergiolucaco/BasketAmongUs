@@ -29,6 +29,7 @@ To structure this application web it will be used some technologies:
         * Node Js
         * Express
         * MongoDB
+        * Mongoose
         * Firebase
 
 This will be the initial software that I pretend to use. However, all this content is sensitive to be changed.
@@ -36,4 +37,4 @@ This will be the initial software that I pretend to use. However, all this conte
 
 
 
-Last Updated : 15/11
+Last Updated : 25/11

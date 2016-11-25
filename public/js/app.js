@@ -2,7 +2,8 @@ angular.module('myBasketApp', [
 	'ControllersModule',
 	'ServicesModule', 
 	'ngRoute', 
-	'ngMap'
+	'ngMap',
+	'geolocation'
 
 ])
 .config(function ($routeProvider){

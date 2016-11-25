@@ -18,6 +18,10 @@ angular.module('ServicesModule')
             return NgMap.getMap({ id: 'home-map' })
         }
 
+         function getSearchMap () {
+            return NgMap.getMap({ id: 'search-map' })
+        }
+
         function zoomToIncludeMarkers( map, locations ) {
             const bounds = new google.maps.LatLngBounds();
 
@@ -45,12 +49,13 @@ angular.module('ServicesModule')
 
             return marker;
         }
-
+        // Load every JSON record and transform it to readable google location. 
+        // Also put a infoWindow to every marker.
         function convertToMapPoints( courts ){
 
             // Clear the locations holder
             var locations = [];
-            // var infoWindow = new google.maps.InfoWindow();
+          
             // Loop through all of the JSON entries provided in the courts
             for(var i= 0; i < courts.length; i++) {
                 var court = courts[i];

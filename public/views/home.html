@@ -6,6 +6,7 @@
                 <ng-map id="home-map" on-click="setNewPosition()">
                     <marker position="41.379799,2.1729903" animation="DROP"
           draggable="true" on-dragend="getCurrentCoords()"></marker>
+                    <marker position = "getCurrentGeolocation()"></marker>
                 </ng-map>
             </div>
         </div>
@@ -14,6 +15,7 @@
             <div class="panel panel-default">
                 <!-- Panel Title -->
                 <div class="panel-heading">
+                 <h2 class="panel-title text-center">You can add new courts <span class="glyphicon glyphicon-search"></span></h2>
                 </div>
                 <!-- Panel Body -->
                 <div class="panel-body">
