@@ -60,7 +60,7 @@ module.exports = function(app) {
 
 
     // Retrieves JSON records for all users who meet a certain set of query conditions
-    app.post('/filteredCourts/', function(req, res){
+    app.post('/filteredCourts', function(req, res){
 
         // Grab all of the query parameters from the body.
         // var lat             = req.body.latitude;
@@ -71,7 +71,7 @@ module.exports = function(app) {
         
         console.log("Resultado req body : ");
         console.log(req.body);
-        const { lat, long, distance, covered, uncovered } = req.body
+        const { latitude, longitude, distance, covered, uncovered } = req.body
         // Opens a generic Mongoose Query. Depending on the post body we will...
 
 
@@ -86,11 +86,12 @@ module.exports = function(app) {
         // } 
         if ( distance ){
 
-            var filterAround=getFilterCoord(lat,long,distance);
-            console.log(filterAround)
+            var filterAround=getFilterCoord(longitude,latitude,distance);
+            console.log("El valor del filtro que se aplica al find del modelo :")
+            console.log( JSON.stringify(filterAround)  )
 
             // filter = { distance : getFilterCoord(lat,long,distance) }
-            var query = Court.find( { filterAround } )
+            var query = Court.find( filterAround )
         } 
          else if( !covered && !uncovered && !distance ) {
              var query = Court.find( {} );
@@ -125,22 +126,15 @@ module.exports = function(app) {
 
             // If no errors, respond with a JSON of all courts that meet the criteria
             res.json(courts);
+            console.log("Se hace un post de : ")
             console.log(courts)
         });
     });
 };  
-        function getFilterCoord( latitude, longitude, km) {
+        function getFilterCoord( longitude, latitude, km) {
 
             const type = "Point";
             const coordinates = [ longitude , latitude ];
 
-            return {
-                "location" : {
-                     $near: {
-                            $geometry: { type, coordinates },
-                            $maxDistance: km*1000
-                        }
-                    }
-                }
-
+            return { location : { $near: { $geometry: { type, coordinates }, $maxDistance: km*1000 } } }
         }
