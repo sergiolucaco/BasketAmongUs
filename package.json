@@ -4,6 +4,7 @@
   "description": "This is my final project in SkyLab Coders Academy during a full-stack web development bootcamp in Barcelona.",
   "main": "app.js",
   "scripts": {
+    "start": "node app",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
