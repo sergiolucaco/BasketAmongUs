@@ -93,6 +93,6 @@ angular.module('ServicesModule')
 
 
 
-        return { createMarker, getHomeMap, zoomToIncludeMarkers, convertToMapPoints } 
+        return { createMarker, getHomeMap, getSearchMap, zoomToIncludeMarkers, convertToMapPoints } 
 
     })

@@ -1,6 +1,6 @@
 // Creates the addCtrl Module and Controller. Note that it depends on 'geolocation' and 'MapService' modules.
 angular.module('ControllersModule')
-    .controller('searchCtrl', function($scope, $log, $http, $rootScope, /* geolocation, */ MapService, DataService){
+    .controller('searchCtrl', function($scope, $rootScope, /* geolocation, */ MapService, DataService){
 
         // Initializes Variables
         // ----------------------------------------------------------------------------
@@ -45,40 +45,37 @@ angular.module('ControllersModule')
 
             };
 
-         
+        $scope.formData.distance = "";
+        $scope.formData.covered ="";
+        $scope.formData.uncovered ="";
+
+        // const latlon = new google.maps.LatLng(+queryBody.latitude, +queryBody.longitude);
+        
             DataService.postQuery( queryBody )
                 .then( queryResults => {
+                    // console.log(typeof queryResults );
+                    $.each(queryResults.data,function (key,value){
+                        var courtsFiltered = value;
+                        var aLocationsFiltered = courtsFiltered.location;
+                        // console.log(aLocationsFiltered[0] + " longitude of " + courtsFiltered.courtname);
+                        // console.log(aLocationsFiltered[1] + " latitude of " + courtsFiltered.courtname);
+                        var courtLatitudeCourtsFiltered = aLocationsFiltered[1];
+                        var courtLongitudeCourtsFiltered = aLocationsFiltered[0];
+                        latlon = new google.maps.LatLng( +courtLatitudeCourtsFiltered,+courtLongitudeCourtsFiltered )
+                        console.log(`coordinates of ${courtsFiltered.courtname} : ${latlon} `)
+                        MapService.getSearchMap()
+                            .then(map => {
+                                MapService.createMarker( map, {latlon})
+                            })
 
+                    })
 
-                    $scope.formData.distance = "";
-                    $scope.formData.covered ="";
-                    $scope.formData.uncovered ="";
-
-                    console.log(queryResults)
-                    // MapService.getSearchMap()
-                    //     .then( map => {
-                    //         MapService.createMarker( map, {latlon})
-                    //     })
                     $scope.queryCount = queryResults.length;
 
                 })
                 .catch( console.log )
 
-            //        // Post the queryBody to the /query POST route to retrieve the filtered results
-            // $http.post('/filteredCourts', queryBody)
 
-            //     // Store the filtered results in queryResults
-            //     .success(function(queryResults){
-
-            //         // Pass the filtered results to the Google Map Service and refresh the map
-            //         MapService.refresh(queryBody.latitude, queryBody.longitude, queryResults);
-
-            //         // Count the number of records retrieved for the panel-footer
-            //         $scope.queryCount = queryResults.length;
-            //     })
-            //     .error(function(queryResults){
-            //         console.log('Error ' + queryResults);
-            //     })
         };
     });
 
