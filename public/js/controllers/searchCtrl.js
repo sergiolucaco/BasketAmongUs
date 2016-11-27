@@ -22,15 +22,15 @@ angular.module('ControllersModule')
         //     $scope.formData.latitude = parseFloat(coords.lat).toFixed(3);
         // });
 
-        // Get coordinates based on mouse click. When a click event is detected....
-        $rootScope.$on("clicked", function(){
+        // // Get coordinates based on mouse click. When a click event is detected....
+        // $rootScope.$on("clicked", function(){
 
-            // Run the MapService functions associated with identifying coordinates
-            $scope.$apply(function(){
-                $scope.formData.latitude = parseFloat(MapService.clickLat).toFixed(3);
-                $scope.formData.longitude = parseFloat(MapService.clickLong).toFixed(3);
-            });
-        });
+        //     // Run the MapService functions associated with identifying coordinates
+        //     $scope.$apply(function(){
+        //         $scope.formData.latitude = parseFloat(MapService.clickLat).toFixed(3);
+        //         $scope.formData.longitude = parseFloat(MapService.clickLong).toFixed(3);
+        //     });
+        // });
 
         // Take query parameters and incorporate into a JSON queryBody
         $scope.queryCourts = function(){
