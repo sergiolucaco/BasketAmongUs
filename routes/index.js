@@ -63,12 +63,6 @@ module.exports = function(app) {
     app.post('/filteredCourts', function(req, res){
 
         // Grab all of the query parameters from the body.
-        // var lat             = req.body.latitude;
-        // var long            = req.body.longitude;
-        // var distance        = req.body.distance;
-        // var cover           = req.body.cover;
-        // var uncover          = req.body.uncover;
-        
         console.log("Resultado req body : ");
         console.log(req.body);
         const { latitude, longitude, distance, covered, uncovered } = req.body
@@ -76,48 +70,38 @@ module.exports = function(app) {
 
 
         var filter = {} ;
+        var filterAround;
+        var filterAroundCover;
+        var filterAroundUncover;
 
-        // if ( covered ){
-        //     filter = { tipology : covered }
-        //     var query = Court.find( filter )
-        // } if ( uncovered ){
-        //     filter = { tipology : uncovered }
-        //     var query = Court.find( filter )
-        // } 
-        if ( distance ){
-
-            var filterAround=getFilterCoord(longitude,latitude,distance);
-            console.log("El valor del filtro que se aplica al find del modelo :")
-            console.log( JSON.stringify(filterAround)  )
-
-            // filter = { distance : getFilterCoord(lat,long,distance) }
-            var query = Court.find( filterAround )
+        if ( covered ){
+            console.log("covered is in...")
+             filter = { tipology : covered }
+             var query = Court.find( filter )
+        }if ( uncovered ){
+            console.log("uncovered is in...")
+             filter = { tipology : uncovered }
+             var query = Court.find( filter )
         } 
-         else if( !covered && !uncovered && !distance ) {
+        if ( distance ){
+            console.log("distance is in...")
+            filterAround = getFilterCoord(longitude,latitude,distance);
+            var query = Court.find( filterAround )
+
+        }if ( distance && covered){
+            console.log("distance && covered is in...")
+            filterAroundCover = getFilterCoordAndCovered(longitude,latitude,distance,covered);
+            var query = Court.find( filterAroundCover )
+
+        }if ( distance && uncovered ){
+            console.log("distance && uncovered is in...")
+            filterAroundUncover = getFilterCoordAndUncovered(longitude,latitude,distance,uncovered);
+            var query = Court.find( filterAroundUncover )            
+        }           
+        // console.log( JSON.stringify(filterAround)  ) // to see when array appears with "object"[object]
+        else if( !covered && !uncovered && !distance ) {
              var query = Court.find( {} );
         }
-
-
-
-
-
-
-        // // ...include filter by Max Distance
-        // if( distance ){
-
-        //     console.log("I'm in")
-        //     // Using MongoDB's geospatial querying features. (Note how coordinates are set [long, lat]
-        //     query = query.where('location').near({ center: {type: 'Point', coordinates: [long, lat]},
-
-        //         // Converting meters to km. Specifying spherical geometry (for globe)
-        //         maxDistance: distance * 1000, spherical: true});
-        // }
-
-        // // ...include filter by cover / uncover
-        // if( cover || uncover ){
-        //     query.or([{ 'tipology': cover }, { 'tipology': uncover }]);
-        // }
-
 
         // Execute Query and Return the Query Results
         query.exec(function(err, courts){
@@ -131,10 +115,29 @@ module.exports = function(app) {
         });
     });
 };  
+
+
+
         function getFilterCoord( longitude, latitude, km) {
 
             const type = "Point";
             const coordinates = [ longitude , latitude ];
 
             return { location : { $near: { $geometry: { type, coordinates }, $maxDistance: km*1000 } } }
+        }
+
+        function getFilterCoordAndCovered( longitude, latitude, km, covered) {
+
+            const type = "Point";
+            const coordinates = [ longitude , latitude ];
+
+            return { location : { $near: { $geometry: { type, coordinates }, $maxDistance: km*1000 } }, tipology : covered }
+        }
+
+        function getFilterCoordAndUncovered( longitude, latitude, km, uncovered) {
+
+            const type = "Point";
+            const coordinates = [ longitude , latitude ];
+
+            return { location : { $near: { $geometry: { type, coordinates }, $maxDistance: km*1000 } }, tipology : uncovered }
         }
