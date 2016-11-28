@@ -56,6 +56,12 @@ angular.module('ServicesModule')
 
             return marker;
         }
+
+        function getContentWindow(courtname, address, tipology) {
+            return `<p><b>Courtname</b>: ${courtname}<br><b>Address</b>: ${address} <br><b>Tipology</b>: ${tipology}</p>`;
+        }
+
+
         // Load every JSON record and transform it to readable google location. 
         // Also put a infoWindow to every marker.
         function convertToMapPoints( courts ){
@@ -66,12 +72,9 @@ angular.module('ServicesModule')
             // Loop through all of the JSON entries provided in the courts
             for(var i= 0; i < courts.length; i++) {
                 var court = courts[i];
-
+                const { courtname, address, tipology} = court
                 // Create popup windows for each record
-                var  contentString =
-                    '<p><b>Courtname</b>: ' + court.courtname +
-                    '<br><b>Address</b>: ' + court.address + '<br><b>Tipology</b>: ' + court.tipology +  
-                    '</p>';
+                var  contentString = getContentWindow(courtname, address, tipology);
                    
                 // Converts each of the JSON records into Google Maps Location format (Note [Lat, Lng] format).
                 locations.push({
@@ -79,12 +82,13 @@ angular.module('ServicesModule')
                     message: new google.maps.InfoWindow({
                         content: contentString,
                         maxWidth: 320
-                    }),
-                    courtname: court.courtname,
-                    address: court.address,
-                    tipology: court.tipology
-                    
-            });
+                    })
+                    // ,
+                    // courtname: court.courtname,
+                    // address: court.address,
+                    // tipology: court.tipology
+                        
+                });
         }
         // location is now an array populated with records in Google Maps format
         return locations;
@@ -93,6 +97,6 @@ angular.module('ServicesModule')
 
 
 
-        return { createMarker, getHomeMap, getSearchMap, zoomToIncludeMarkers, convertToMapPoints } 
+        return { createMarker, getHomeMap, getSearchMap, zoomToIncludeMarkers, convertToMapPoints, getContentWindow } 
 
     })

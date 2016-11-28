@@ -18,6 +18,8 @@ angular.module('ControllersModule')
 		//The last step is needed to center the map to see all the markers.
 		DataService.getAllCourts()
 		    .then( courts => {
+		    	console.log("These are courts : ")
+		    	console.log(courts)
 		        $rootScope.courts = courts;
 		        return MapService.getHomeMap()
 		    })
@@ -57,17 +59,20 @@ angular.module('ControllersModule')
 	    // Creates a new court based on the form fields
 	    $scope.createCourt = function() {
 
-	        
-
+	    	const { courtname, address, longitude, latitude, cover: tipology } = $scope.formData;
 	        // Grabs all of the text box fields
 	        var courtData = {
-	            courtname: $scope.formData.courtname,
-	            address: $scope.formData.address,
-	            location: [+$scope.formData.longitude, +$scope.formData.latitude],
-	            tipology: $scope.formData.cover
+	            courtname,
+	            address,
+	            location: [+longitude, +latitude],
+	            tipology
 	        };
 	        
-	        const latlon = new google.maps.LatLng(+courtData.location[1], +courtData.location[0]);
+	        const latlon = new google.maps.LatLng(+latitude, +longitude);
+	        const message = new google.maps.InfoWindow({
+                content: MapService.getContentWindow(courtname, address, tipology),
+                maxWidth: 320
+            })
 
 	        // Saves the court data to the db
 	        DataService.addCourt( courtData )
@@ -80,7 +85,7 @@ angular.module('ControllersModule')
 
 					MapService.getHomeMap()
 						.then( map => {
-							MapService.createMarker( map, { latlon } ) //Create a marker with the location captured in the form field
+							MapService.createMarker( map, { latlon, message } ) //Create a marker with the location captured in the form field
 	                	
 						})
 						console.log(data.data);
