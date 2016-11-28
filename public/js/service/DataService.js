@@ -13,7 +13,8 @@ angular.module('ServicesModule')
     	}
 
         function postQuery ( oQuery ) {
-            return $http.post('/filteredCourts', oQuery)    	    
+            return $http.post('/filteredCourts', oQuery)
+                                .then( results => results.data)    	    
         }
         return { getAllCourts, addCourt, postQuery }
     })

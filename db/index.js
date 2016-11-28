@@ -1,9 +1,8 @@
 const mongoose = require('mongoose')
 //const MongoClient = = require('mongodb').MongoClient
-mongoose.Promise = global.Promise;
+//mongoose.Promise = global.Promise;
 
 const urlDB = process.env.URL_DB
-
 mongoose.connect(urlDB)
 
 const db = mongoose.connection;

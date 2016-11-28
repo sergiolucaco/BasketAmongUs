@@ -18,14 +18,13 @@ angular.module('ControllersModule')
 		//The last step is needed to center the map to see all the markers.
 		DataService.getAllCourts()
 		    .then( courts => {
-		    	console.log("These are courts : ")
-		    	console.log(courts)
 		        $rootScope.courts = courts;
 		        return MapService.getHomeMap()
 		    })
 		    .then( map => {
 
 		        const locations = MapService.convertToMapPoints ( $rootScope.courts );
+		        console.log(locations)
 		        const markers = locations.map( MapService.createMarker.bind(null, map) );
 		        MapService.zoomToIncludeMarkers( map, locations )
 		    })
@@ -87,8 +86,8 @@ angular.module('ControllersModule')
 						.then( map => {
 							MapService.createMarker( map, { latlon, message } ) //Create a marker with the location captured in the form field
 	                	
-						})
-						console.log(data.data);
+					})
+						
 	                
 
 	        	})

@@ -1,8 +1,8 @@
 const express = require ('express');
 const bodyparser = require('body-parser');
 const mongoose = require('mongoose');
-const fs = require('fs');
 
+const fs = require('fs');
 const thereIsDotEnv = fs.existsSync('.env')
 if ( thereIsDotEnv ) require('dotenv').load()
 
@@ -10,7 +10,7 @@ mongoose.Promise = global.Promise;
 
 const db = require('./db');
 
-const PORT = process.env._PORT || 3000;
+const PORT = 3000;
 
 let app = express();
 
