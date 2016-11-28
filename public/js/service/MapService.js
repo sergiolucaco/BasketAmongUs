@@ -26,6 +26,11 @@ angular.module('ServicesModule')
             return NgMap.getMap({ id: 'search-map' })
         }
 
+        //Generate detail map .
+         function getDetailMap () {
+            return NgMap.getMap( { id : 'detail-map'} )
+         }
+
         // Include all the markers in the map and center into their location.
         function zoomToIncludeMarkers( map, locations ) {
             const bounds = new google.maps.LatLngBounds();
@@ -57,8 +62,8 @@ angular.module('ServicesModule')
             return marker;
         }
 
-        function getContentWindow(courtname, address, tipology) {
-            return `<p><b>Courtname</b>: ${courtname}<br><b>Address</b>: ${address} <br><b>Tipology</b>: ${tipology}</p>`;
+        function getContentWindow(_id,courtname, address, tipology) {
+            return `<p><b>Courtname</b>: <a href ="#/detailCourt/${_id}">${courtname}</a><br><b>Address</b>: ${address} <br><b>Tipology</b>: ${tipology}</p>`;
         }
 
 
@@ -72,9 +77,9 @@ angular.module('ServicesModule')
             // Loop through all of the JSON entries provided in the courts
             for(var i= 0; i < courts.length; i++) {
                 var court = courts[i];
-                const { courtname, address, tipology} = court
+                const {_id, courtname, address, tipology} = court
                 // Create popup windows for each record
-                var  contentString = getContentWindow(courtname, address, tipology);
+                var  contentString = getContentWindow(_id,courtname, address, tipology);
                    
                 // Converts each of the JSON records into Google Maps Location format (Note [Lat, Lng] format).
                 locations.push({
@@ -97,6 +102,6 @@ angular.module('ServicesModule')
 
 
 
-        return { createMarker, getHomeMap, getSearchMap, zoomToIncludeMarkers, convertToMapPoints, getContentWindow } 
+        return { createMarker, getHomeMap, getSearchMap, zoomToIncludeMarkers, convertToMapPoints, getContentWindow, getDetailMap } 
 
     })

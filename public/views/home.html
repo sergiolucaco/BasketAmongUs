@@ -3,7 +3,7 @@
         <!-- Google Map -->
         <div class="col-md-7">
             <div id="map_courts">
-                <ng-map id="home-map" on-click="setNewPosition()">
+                <ng-map id="home-map" on-click="">
                     <marker position="41.379799,2.1729903" animation="DROP"
           draggable="true" on-dragend="getCurrentCoords()"></marker>
                     <marker position = "getCurrentGeolocation()"></marker>
@@ -23,7 +23,7 @@
                     <form name ="addForm" novalidate>
                         <!-- Text Boxes and Other User Inputs. Note ng-model binds the values to Angular $scope -->
                         <div class="form-group">
-                            <label for="courtname">Court name <span class="badge">All fields required</span></label>
+                            <label for="courtname">Court name <i class="fa fa-dribbble"></i> <span class="badge">All fields required</span></label>
                             <input type="text" class="form-control" id="courtname" placeholder="Court name should be put here.." ng-model="formData.courtname" required>
                         </div>
 

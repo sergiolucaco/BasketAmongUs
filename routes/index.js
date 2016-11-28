@@ -7,7 +7,7 @@ module.exports = function(app) {
 
     // GET Routes
     // --------------------------------------------------------
-    // Retrieve records for all courts in the db
+        // Retrieve records for all courts in the db
     app.get('/api/courts', function(req, res){
 
         // Uses Mongoose schema to run the search (empty conditions)
@@ -22,6 +22,14 @@ module.exports = function(app) {
             res.json(courts);
         });
     });
+
+    app.get(`/detailCourt/:id`, function(req,res){
+        const { id } = req.params;
+        Court.findById( id )
+            .then( court => res.json(court) )
+            .catch( err => new Error (err) )
+
+    })
 
     // POST Routes
     // --------------------------------------------------------
@@ -41,24 +49,6 @@ module.exports = function(app) {
         });
     });
 
-
-
-    // app.get('/filteredCourts/', function(req, res){
-
-    //     // Uses Mongoose schema to run the search (empty conditions)
-    //     var query = Court.find({})
-
-
-    //     query.exec(function(err, courts){
-    //         if(err)
-    //             res.send(err);
-
-    //         // If no errors are found, it responds with a JSON of all courts
-    //         res.json(courts);
-    //     });
-    // });
-
-
     // Retrieves JSON records for all users who meet a certain set of query conditions
     app.post('/filteredCourts', function(req, res){
 
@@ -75,26 +65,21 @@ module.exports = function(app) {
         var filterAroundUncover;
 
         if ( covered ){
-            console.log("covered is in...")
-             filter = { tipology : covered }
+            filter = { tipology : covered }
              var query = Court.find( filter )
         }if ( uncovered ){
-            console.log("uncovered is in...")
-             filter = { tipology : uncovered }
+            filter = { tipology : uncovered }
              var query = Court.find( filter )
         } 
         if ( distance ){
-            console.log("distance is in...")
             filterAround = getFilterCoord(longitude,latitude,distance);
             var query = Court.find( filterAround )
 
-        }if ( distance && covered){
-            console.log("distance && covered is in...")
+        }if ( distance && covered){            
             filterAroundCover = getFilterCoordAndCovered(longitude,latitude,distance,covered);
             var query = Court.find( filterAroundCover )
 
-        }if ( distance && uncovered ){
-            console.log("distance && uncovered is in...")
+        }if ( distance && uncovered ){            
             filterAroundUncover = getFilterCoordAndUncovered(longitude,latitude,distance,uncovered);
             var query = Court.find( filterAroundUncover )            
         }           
@@ -110,8 +95,7 @@ module.exports = function(app) {
 
             // If no errors, respond with a JSON of all courts that meet the criteria
             res.json(courts);
-            console.log("Se hace un post de : ")
-            console.log(courts)
+
         });
     });
 };  

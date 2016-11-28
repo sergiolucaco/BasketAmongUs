@@ -16,5 +16,11 @@ angular.module('ServicesModule')
             return $http.post('/filteredCourts', oQuery)
                                 .then( results => results.data)    	    
         }
-        return { getAllCourts, addCourt, postQuery }
+
+        function getCourtsDetails ( id ){
+            const url = `/detailCourt/${id}`;
+            return $http.get( url ).then( d => d.data )
+            console.log(d.data);
+        }
+        return { getAllCourts, addCourt, postQuery , getCourtsDetails}
     })

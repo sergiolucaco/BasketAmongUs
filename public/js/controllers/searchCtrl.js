@@ -36,12 +36,15 @@ angular.module('ControllersModule')
         $scope.queryCourts = function(){
 
                 // Assemble Query Body
-                queryBody = {
-                    longitude: parseFloat($scope.formData.longitude),
-                    latitude: parseFloat($scope.formData.latitude),
-                    distance: parseFloat($scope.formData.distance),
-                    covered: $scope.formData.covered,
-                    uncovered: $scope.formData.uncovered
+                
+                const { longitude,latitude,distance,covered,uncovered } = $scope.formData;
+                
+                const queryBody = {
+                    longitude,
+                    latitude,
+                    distance,
+                    covered,
+                    uncovered
 
                 };
 
@@ -57,10 +60,11 @@ angular.module('ControllersModule')
                 return MapService.getSearchMap()
             })
             .then( map => {
+                
                 const locations = MapService.convertToMapPoints($rootScope.queryResults);
                 var markers = locations.map( MapService.createMarker.bind(null,map) );
                 MapService.zoomToIncludeMarkers( map, locations );
-                
+                              
             })
             .catch( console.log )
 
@@ -85,7 +89,11 @@ angular.module('ControllersModule')
 
         }
 
-
+        function removeMarkers ( markers ) {
+            if (markers.length != 0 ){
+                markers.forEach( marker => marker.setMap(null) )
+            }
+        }
   });
 
 

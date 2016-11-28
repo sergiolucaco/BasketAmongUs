@@ -14,8 +14,11 @@ angular.module('myBasketApp', [
 		})
 		.when('/searchCourts',{
 			templateUrl: '/views/searchCourts.html',
-			controller: 'searchCtrl'
-			
+			controller: 'searchCtrl'			
+		})
+		.when('/detailCourt/:id',{
+			templateUrl: '/views/detailCourt.html',
+			controller : 'detailCtrl'
 		})
 		.otherwise({
 			redirectTo: '/'

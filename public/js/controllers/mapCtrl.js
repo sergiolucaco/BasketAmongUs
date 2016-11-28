@@ -24,7 +24,6 @@ angular.module('ControllersModule')
 		    .then( map => {
 
 		        const locations = MapService.convertToMapPoints ( $rootScope.courts );
-		        console.log(locations)
 		        const markers = locations.map( MapService.createMarker.bind(null, map) );
 		        MapService.zoomToIncludeMarkers( map, locations )
 		    })
