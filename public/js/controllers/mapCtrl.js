@@ -37,21 +37,6 @@ angular.module('ControllersModule')
      		$scope.formData.longitude = $scope.pos.lng().toFixed(3);
 		}
 
-		// $scope.setNewPosition = function( event ) {
-		// 	const location = {
-		// 		latlon: event.latLng
-		// 	}
-
-		// 	MapService.getHomeMap()
-		// 		.then( map=>{
-		// 			MapService.createMarker( map, location)
-
-	
-		// 		})
-		// }
-
-
-
 			    // Functions
 	    // ----------------------------------------------------------------------------
 	    // Creates a new court based on the form fields

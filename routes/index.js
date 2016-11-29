@@ -36,7 +36,7 @@ module.exports = function(app) {
     // Provides method for saving new courts in the db
     app.post('/api/courts', function(req, res){
 
-        // Creates a new User based on the Mongoose schema and the post bo.dy
+        // Creates a new User based on the Mongoose schema and the post body
         var newcourt = new Court(req.body);
 
         // New User is saved in the db.

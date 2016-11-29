@@ -1,16 +1,23 @@
 <div class="row">
-    <div class="col-md-5">
+    <div class="panel-class">
+        <div class="col-md-5">
 
-        <div class="sample">
-            <h3>Name : {{ singleCourt.courtname }} </h3>
-            <h3>Adress : {{ singleCourt.address }} </h3>
-            <h3>Tipology : {{ singleCourt.tipology }} </h3>
-        </div>
-        
-    </div>
-    <div class="col-md-7">
-        <ng-map id="detail-map">
+            <div class="sample">
+                <h3>Name : {{ singleCourt.courtname }} </h3>
+                <h3>Adress : {{ singleCourt.address }} </h3>
+                <h3>Tipology : {{ singleCourt.tipology }} </h3>
+            </div>
             
-        </ng-map> 
+        </div>
+        <div class="col-md-7">
+            <ng-map id="detail-map" center ="[{{ singleCourt.location[1] }}, {{ singleCourt.location[0] }}]">
+                <custom-marker position ="[{{ singleCourt.location[1] }}, {{ singleCourt.location[0] }}]">
+                    <div>
+                        <img src="./basketball.png" >
+                    </div>
+                </custom-marker>
+                
+            </ng-map> 
+        </div>
     </div>
 </div>

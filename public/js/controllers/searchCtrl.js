@@ -13,30 +13,12 @@ angular.module('ControllersModule')
         // Functions
         // ----------------------------------------------------------------------------
 
-        // Get User's actual coordinates based on HTML5 at window load
-        // geolocation.getLocation().then(function(data){
-        //     coords = {lat:data.coords.latitude, long:data.coords.longitude};
-
-        //     // Set the latitude and longitude equal to the HTML5 coordinates
-        //     $scope.formData.longitude = parseFloat(coords.long).toFixed(3);
-        //     $scope.formData.latitude = parseFloat(coords.lat).toFixed(3);
-        // });
-
-        // // Get coordinates based on mouse click. When a click event is detected....
-        // $rootScope.$on("clicked", function(){
-
-        //     // Run the MapService functions associated with identifying coordinates
-        //     $scope.$apply(function(){
-        //         $scope.formData.latitude = parseFloat(MapService.clickLat).toFixed(3);
-        //         $scope.formData.longitude = parseFloat(MapService.clickLong).toFixed(3);
-        //     });
-        // });
-
         // Take query parameters and incorporate into a JSON queryBody
         $scope.queryCourts = function(){
 
                 // Assemble Query Body
-                
+
+
                 const { longitude,latitude,distance,covered,uncovered } = $scope.formData;
                 
                 const queryBody = {
@@ -48,24 +30,25 @@ angular.module('ControllersModule')
 
                 };
 
-                $scope.formData.distance = "";
-                $scope.formData.covered ="";
-                $scope.formData.uncovered ="";
+                distance = "";
+                covered ="";
+                uncovered ="";
 
             // const latlon = new google.maps.LatLng(+queryBody.latitude, +queryBody.longitude);
             
             DataService.postQuery( queryBody )
             .then( queryResults => {
+
                 $rootScope.queryResults = queryResults ;
                 return MapService.getSearchMap()
             })
             .then( map => {
-                
                 const locations = MapService.convertToMapPoints($rootScope.queryResults);
                 var markers = locations.map( MapService.createMarker.bind(null,map) );
-                MapService.zoomToIncludeMarkers( map, locations );
-                              
+                MapService.zoomToIncludeMarkers( map, locations );        
+            
             })
+
             .catch( console.log )
 
 
