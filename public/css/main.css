@@ -2,7 +2,13 @@
 	height: 385px;
 }
 
-.sample {
-	background-color: red;
+#detail-map {
+	height: 100%;
+	width: 100%;
+}
+
+.defImgDetailView{
+	width: 100%;
+	height : 60%;
 }
 
