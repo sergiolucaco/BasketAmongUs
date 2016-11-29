@@ -20,6 +20,7 @@ module.exports = function(app) {
 
             // If no errors are found, it responds with a JSON of all courts
             res.json(courts);
+            
         });
     });
 

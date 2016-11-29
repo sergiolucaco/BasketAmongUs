@@ -10,8 +10,14 @@ angular.module('ControllersModule')
         $scope.formData.latitude = 41.379;
         $scope.formData.longitude = 2.1729; 
 
+        var markersShowed;
+
+        
+
         // Functions
         // ----------------------------------------------------------------------------
+
+ 
 
         // Take query parameters and incorporate into a JSON queryBody
         $scope.queryCourts = function(){
@@ -30,51 +36,32 @@ angular.module('ControllersModule')
 
                 };
 
-                distance = "";
-                covered ="";
-                uncovered ="";
+                $scope.formData.distance = "";
+                $scope.formData.covered ="";
+                $scope.formData.uncovered ="";
 
-            // const latlon = new google.maps.LatLng(+queryBody.latitude, +queryBody.longitude);
             
             DataService.postQuery( queryBody )
-            .then( queryResults => {
+                .then( queryResults => {
+                    removeMarkers();
+                    $rootScope.queryResults = queryResults ;
+                    return MapService.getSearchMap()
+                })
+                .then( map => {
+                    const locations = MapService.convertToMapPoints($rootScope.queryResults);
+                    markersShowed = locations.map( MapService.createMarker.bind(null,map) );
+                    MapService.zoomToIncludeMarkers( map, locations );        
+                
+                })
 
-                $rootScope.queryResults = queryResults ;
-                return MapService.getSearchMap()
-            })
-            .then( map => {
-                const locations = MapService.convertToMapPoints($rootScope.queryResults);
-                var markers = locations.map( MapService.createMarker.bind(null,map) );
-                MapService.zoomToIncludeMarkers( map, locations );        
-            
-            })
-
-            .catch( console.log )
-
-
-                    // // console.log(typeof queryResults );
-                    // $.each(queryResults.data,function (key,value){
-                    //     var courtsFiltered = value;
-                    //     var aLocationsFiltered = courtsFiltered.location;
-                    //     // console.log(aLocationsFiltered[0] + " longitude of " + courtsFiltered.courtname);
-                    //     // console.log(aLocationsFiltered[1] + " latitude of " + courtsFiltered.courtname);
-                    //     var courtLatitudeCourtsFiltered = aLocationsFiltered[1];
-                    //     var courtLongitudeCourtsFiltered = aLocationsFiltered[0];
-                    //     latlon = new google.maps.LatLng( +courtLatitudeCourtsFiltered,+courtLongitudeCourtsFiltered )
-                    //     console.log(`coordinates of ${courtsFiltered.courtname} : ${latlon} `)
-                    //     MapService.getSearchMap()
-                    //         .then(map => {
-                    //             MapService.createMarker( map, {latlon})
-                    //         })
-
-                    // })
+                .catch( console.log )
 
 
         }
 
-        function removeMarkers ( markers ) {
-            if (markers.length != 0 ){
-                markers.forEach( marker => marker.setMap(null) )
+        function removeMarkers ( ) {
+            if (markersShowed && markersShowed.length != 0 ){
+                markersShowed.forEach( marker => marker.setMap(null) )
             }
         }
   });

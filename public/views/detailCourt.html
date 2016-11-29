@@ -1,23 +1,68 @@
 <div class="row">
-    <div class="panel-class">
-        <div class="col-md-5">
+    <div class="col-md-5">
 
-            <div class="sample">
+       <div class="panel panel-default">
+
+        <!-- Panel Title -->
+        <div class="panel-heading">
+            <h2 class="panel-title text-center">Detail view of basketball court </h2>
+        </div>
+
+        <!-- Panel Body -->
+        <div class="panel-body">         
+
+            <div>
+
                 <h3>Name : {{ singleCourt.courtname }} </h3>
-                <h3>Adress : {{ singleCourt.address }} </h3>
-                <h3>Tipology : {{ singleCourt.tipology }} </h3>
+
             </div>
-            
-        </div>
-        <div class="col-md-7">
-            <ng-map id="detail-map" center ="[{{ singleCourt.location[1] }}, {{ singleCourt.location[0] }}]">
-                <custom-marker position ="[{{ singleCourt.location[1] }}, {{ singleCourt.location[0] }}]">
-                    <div>
-                        <img src="./basketball.png" >
-                    </div>
-                </custom-marker>
+
+            <div>
+
+                <h3>Adress : {{ singleCourt.address }} </h3>
+
+            </div>
+
+            <div>
+
+                <h3>Tipology : {{ singleCourt.tipology }} </h3>
+
+            </div>
+
+            <div>
                 
-            </ng-map> 
+                <h4>Have you played in this court recently?</h4>
+                <textarea class="form-control" rows="3">Don't hesitate and leave a comment</textarea>
+
+            </div>
+
+
+
+
+            <!-- Query button. Note that its tied to queryUsers() function from queryCtrl.  -->
+            <button type="submit" class="btn btn-primary" ng-click="">Back to Home!</button>
+
         </div>
+
+        <!-- Footer panel for displaying count. Note how it will only display if queryCount is greater than 0 -->
+         <!--    <div ng-show="queryCount>0" class="panel-footer">
+                <p class="text-center"> We Found {{queryCount}} courts.</p>
+            </div> -->
+        </div>
+
+
+
+
+
+    </div>
+    <div class="col-md-7">
+        <ng-map id="detail-map" center ="[{{ singleCourt.location[1] }}, {{ singleCourt.location[0] }}]">
+            <custom-marker position ="[{{ singleCourt.location[1] }}, {{ singleCourt.location[0] }}]">
+                <div>
+                    <img src="./basketball.png" >
+                </div>
+            </custom-marker>
+            
+        </ng-map> 
     </div>
 </div>

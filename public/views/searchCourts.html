@@ -40,7 +40,7 @@
                         <input type="number" min = 0 step = 1 class="form-control" id="distance" placeholder="Km you want to search around you" ng-model="formData.distance">
                     </div>
 
-                    <!-- Note ng-true-value which translates check values into explicit gender strings -->
+                    <!-- Note ng-true-value which translates check values into explicit tipology strings -->
                     <label>Tipology</label>
                     <div class="form-group">
                         <label class="radio-inline">
@@ -54,7 +54,7 @@
                      
                     </div>
 
-                    <!-- Query button. Note that its tied to queryUsers() function from queryCtrl.  -->
+                    <!-- Query button. Note that its tied to queryCourts() function from queryCtrl.  -->
                     <button type="submit" class="btn btn-danger btn-block" ng-click="queryCourts()">Search</button>
                 </form>
             </div>
