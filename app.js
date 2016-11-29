@@ -24,6 +24,4 @@ app.use( bodyparser.json() )
 
 require('./routes/index.js')(app);
 
-console.log( JSON.stringify(process.env) )
-console.log( "PORT detected is " + PORT  )
-app.listen(PORT, () => console.log(`__Listening on port ${PORT}`))
+app.listen(PORT, () => console.log(`Listening on port ${PORT}...`))
