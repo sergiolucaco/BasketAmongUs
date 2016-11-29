@@ -1,6 +1,14 @@
 // Dependencies
-var mongoose        = require('mongoose');
-var Court           = require('../models/courtSchema.js');
+const mongoose = require( 'mongoose' );
+const Court = require( '../models/courtSchema.js' );
+
+
+const routerShowAllCourts = require ( './showAllCourts/' );
+const routerAddNewCourt = require ( './addNewCourts/' );
+
+const getFilterCoord  = require ( './handlers/getFilterCoord' );
+const getFilterCoordAndCovered  = require ( './handlers/getFilterCoordAndCovered' );
+const getFilterCoordAndUncovered = require ( './handlers/getFilterCoordAndUncovered' );
 
 // Opens App Routes
 module.exports = function(app) {
@@ -8,22 +16,8 @@ module.exports = function(app) {
     // GET Routes
     // --------------------------------------------------------
         // Retrieve records for all courts in the db
-    app.get('/api/courts', function(req, res){
-
-        // Uses Mongoose schema to run the search (empty conditions)
-        var query = Court.find({}).sort({created_at: -1});
-
-
-        query.exec(function(err, courts){
-            if(err)
-                res.send(err);
-
-            // If no errors are found, it responds with a JSON of all courts
-            res.json(courts);
-            
-        });
-    });
-
+    app.use('/api', routerShowAllCourts)
+   
     app.get(`/detailCourt/:id`, function(req,res){
         const { id } = req.params;
         Court.findById( id )
@@ -35,20 +29,7 @@ module.exports = function(app) {
     // POST Routes
     // --------------------------------------------------------
     // Provides method for saving new courts in the db
-    app.post('/api/courts', function(req, res){
-
-        // Creates a new User based on the Mongoose schema and the post body
-        var newcourt = new Court(req.body);
-
-        // New User is saved in the db.
-        newcourt.save(function(err){
-            if(err)
-                res.send(err);
-
-            // If no errors are found, it responds with a JSON of the new user
-            res.json(req.body);
-        });
-    });
+    app.use('/api',routerAddNewCourt)
 
     // Retrieves JSON records for all users who meet a certain set of query conditions
     app.post('/filteredCourts', function(req, res){
@@ -103,26 +84,6 @@ module.exports = function(app) {
 
 
 
-        function getFilterCoord( longitude, latitude, km) {
 
-            const type = "Point";
-            const coordinates = [ longitude , latitude ];
 
-            return { location : { $near: { $geometry: { type, coordinates }, $maxDistance: km*1000 } } }
-        }
 
-        function getFilterCoordAndCovered( longitude, latitude, km, covered) {
-
-            const type = "Point";
-            const coordinates = [ longitude , latitude ];
-
-            return { location : { $near: { $geometry: { type, coordinates }, $maxDistance: km*1000 } }, tipology : covered }
-        }
-
-        function getFilterCoordAndUncovered( longitude, latitude, km, uncovered) {
-
-            const type = "Point";
-            const coordinates = [ longitude , latitude ];
-
-            return { location : { $near: { $geometry: { type, coordinates }, $maxDistance: km*1000 } }, tipology : uncovered }
-        }

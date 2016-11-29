@@ -62,7 +62,7 @@ angular.module('ServicesModule')
             return marker;
         }
 
-        function getContentWindow(_id,courtname, address, tipology) {
+        function getContentWindow(courtname, address, tipology,_id) {
             return `<p><b>Courtname</b>: <a href ="#/detailCourt/${_id}">${courtname}</a><br><b>Address</b>: ${address} <br><b>Tipology</b>: ${tipology}</p>`;
         }
 
@@ -77,9 +77,9 @@ angular.module('ServicesModule')
             // Loop through all of the JSON entries provided in the courts
             for(var i= 0; i < courts.length; i++) {
                 var court = courts[i];
-                const {_id, courtname, address, tipology} = court
+                const {courtname, address, tipology,_id} = court
                 // Create popup windows for each record
-                var  contentString = getContentWindow(_id,courtname, address, tipology);
+                var  contentString = getContentWindow(courtname, address, tipology,_id);
                    
                 // Converts each of the JSON records into Google Maps Location format (Note [Lat, Lng] format).
                 locations.push({

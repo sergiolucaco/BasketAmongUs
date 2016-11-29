@@ -14,6 +14,7 @@ angular.module('ControllersModule')
 		DataService.getCourtsDetails( id )
 		.then( singleCourt => {
 			$scope.singleCourt = singleCourt
+			return singleCourt
 			// $scope.currentDetailPosition = [singleCourt.location[1], singleCourt.location[0] ]
 
 		})

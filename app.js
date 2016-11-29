@@ -1,12 +1,12 @@
 const express = require ('express');
 const bodyparser = require('body-parser');
 const mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
 
 const fs = require('fs');
 const thereIsDotEnv = fs.existsSync('.env')
 if ( thereIsDotEnv ) require('dotenv').load()
 
-mongoose.Promise = global.Promise;
 
 const db = require('./db');
 
