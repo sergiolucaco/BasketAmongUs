@@ -20,8 +20,6 @@ app.use(express.static('public') )
 app.use( bodyparser.urlencoded( { extended: false } ) )
 app.use( bodyparser.json() )
 
-
-
 require('./routes/index.js')(app);
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}...`))
