@@ -1,1 +1,473 @@
-{"_id":"583c736a2cb05842482ed0c0","courtname":"Testing","address":"C/testingicon","tipology":"Covered","__v":0,"updated_at":"2016-11-28T18:11:54.372Z","created_at":"2016-11-28T18:11:54.359Z","location":[2.145,41.39]},{"_id":"583beda43f70da40dc84a857","courtname":"Zoo Court","address":"Ciutadella","tipology":"Covered","__v":0,"updated_at":"2016-11-28T08:41:08.396Z","created_at":"2016-11-28T08:41:08.385Z","location":[2.189,41.386]},{"_id":"583beb09c77a02107ce104d0","courtname":"Jardins de Brossa Court","address":"aadada","tipology":"Covered","__v":0,"updated_at":"2016-11-28T08:30:01.646Z","created_at":"2016-11-28T08:30:01.630Z","location":[2.167,41.368]},{"_id":"58385f2085cfb41f50e1fdea","courtname":"Ruben","address":"Ruben","tipology":"Uncovered","__v":0,"updated_at":"2016-11-25T15:56:16.328Z","created_at":"2016-11-25T15:56:16.313Z","location":[2.143,41.395]},{"_id":"5837eea281b12c25b015153f","courtname":"testing5","address":"C/Sample","tipology":"Uncovered","__v":0,"updated_at":"2016-11-25T07:56:18.371Z","created_at":"2016-11-25T07:56:18.360Z","location":[2.117,41.379]},{"_id":"5837edbabe480e1bec4b91b5","courtname":"testingfriday","address":"newaddress","tipology":"Uncovered","__v":0,"updated_at":"2016-11-25T07:52:26.804Z","created_at":"2016-11-25T07:52:26.766Z","location":[2.128,41.377]},{"_id":"58370378c2929f0154e8fa47","courtname":"testing6","address":"testingadress","tipology":"Covered","__v":0,"updated_at":"2016-11-24T15:12:56.496Z","created_at":"2016-11-24T15:12:56.485Z","location":[2.119,41.395]},{"_id":"5836ec4cc077023774aead22","courtname":"testinginfowindow2","address":"testinginfowindow2","tipology":"Covered","__v":0,"updated_at":"2016-11-24T13:34:04.283Z","created_at":"2016-11-24T13:34:04.272Z","location":[2.1729,41.379]},{"_id":"5836ebb9041cea095c73cfa7","courtname":"testinginfowindow1","address":"testingadressinfowindow1","tipology":"Uncovered","__v":0,"updated_at":"2016-11-24T13:31:37.606Z","created_at":"2016-11-24T13:31:37.595Z","location":[2.111,41.38]},{"_id":"5836eb51af71933554b80610","courtname":"test1","address":"test2","tipology":"Covered","__v":0,"updated_at":"2016-11-24T13:29:53.920Z","created_at":"2016-11-24T13:29:53.917Z","location":[2.116,41.388]},{"_id":"5836eb39af71933554b8060f","courtname":"testing4","address":"testingaddress","tipology":"Covered","__v":0,"updated_at":"2016-11-24T13:29:29.736Z","created_at":"2016-11-24T13:29:29.724Z","location":[2.152,41.389]},{"_id":"5836d20174508b259cde8387","courtname":"Danimemira","address":"danimemirafijamente","tipology":"Uncovered","__v":0,"updated_at":"2016-11-24T11:41:53.476Z","created_at":"2016-11-24T11:41:53.466Z","location":[2.129,41.39]},{"_id":"5836cf212564571a70f6d332","courtname":"aa","address":"aaa","tipology":"Covered","__v":0,"updated_at":"2016-11-24T11:29:37.274Z","created_at":"2016-11-24T11:29:37.263Z","location":[2.15,41.399]},{"_id":"5836c76dfc43d8069cab535b","courtname":"Montjuic palace","address":"asfasf","tipology":"Covered","__v":0,"updated_at":"2016-11-24T10:56:45.206Z","created_at":"2016-11-24T10:56:45.189Z","location":[2.149,41.372]},{"_id":"5836a76c8cc0c434d40cbd1a","courtname":"sdfdsf","address":"sdfsdf","tipology":"Covered","__v":0,"updated_at":"2016-11-24T08:40:12.772Z","created_at":"2016-11-24T08:40:12.762Z","location":[2.131,41.38]},{"_id":"5836a69b5728d1179800c974","courtname":"Sdsd","address":"sdsd","tipology":"Covered","__v":0,"updated_at":"2016-11-24T08:36:43.535Z","created_at":"2016-11-24T08:36:43.524Z","location":[2.144,41.372]},{"_id":"5836a436dd59e7241890a168","courtname":"ajsfhbsj","address":"odsahgas","tipology":"Uncovered","__v":0,"updated_at":"2016-11-24T08:26:30.682Z","created_at":"2016-11-24T08:26:30.664Z","location":[2.173,41.389]},{"_id":"58361dd64572e915a486b399","courtname":"SantGervasi","address":"address","tipology":"Uncovered","__v":0,"updated_at":"2016-11-23T22:53:10.367Z","created_at":"2016-11-23T22:53:10.357Z","location":[2.135,41.399]},{"_id":"58361bfdf9a7582290bc1459","courtname":"IsThatWorking?","address":"asfasafa","tipology":"Covered","__v":0,"updated_at":"2016-11-23T22:45:17.921Z","created_at":"2016-11-23T22:45:17.910Z","location":[2.16,41.385]},{"_id":"583591c3ecb37a00ec5e2df1","courtname":"ejemplo dani","address":"ejemplodaniaddress","tipology":"Covered","__v":0,"updated_at":"2016-11-23T12:55:31.827Z","created_at":"2016-11-23T12:55:31.797Z","location":[2.141,41.402]},{"_id":"583457083293d73228b6cf4a","courtname":"asgasg","address":"asgsagsag","tipology":"Uncovered","__v":0,"updated_at":"2016-11-22T14:32:40.188Z","created_at":"2016-11-22T14:32:40.177Z","location":[2.142,41.383]},{"_id":"5834512bf4d60308e09de5aa","courtname":"AAAA","address":"BBBBBBBB","tipology":"Covered","__v":0,"updated_at":"2016-11-22T14:07:39.964Z","created_at":"2016-11-22T14:07:39.954Z","location":[2.187,41.391]},{"_id":"58344f937b66e11d488a0aaa","courtname":"BBBB","address":"BBBBB","tipology":"Uncovered","__v":0,"updated_at":"2016-11-22T14:00:51.793Z","created_at":"2016-11-22T14:00:51.781Z","location":[2.163,41.392]},{"_id":"58344f742484a233e4c866f8","courtname":"AAAAAAA","address":"AAAAAAA","tipology":"Covered","__v":0,"updated_at":"2016-11-22T14:00:20.134Z","created_at":"2016-11-22T14:00:20.117Z","location":[2.138,41.388]},{"_id":"583408381f1b1c2d5404b9a3","courtname":"addlastinfoabouttipo","address":"asfasg","tipology":"Covered","__v":0,"updated_at":"2016-11-22T08:56:24.541Z","created_at":"2016-11-22T08:56:24.530Z","location":[2.186,41.396]},{"_id":"583407d6c36dd4257886f951","courtname":"SampleAdd4","address":"Sampleaddress42","tipology":"Uncovered","__v":0,"updated_at":"2016-11-22T08:54:46.789Z","created_at":"2016-11-22T08:54:46.786Z","location":[2.175,41.393]},{"_id":"583407b5c36dd4257886f950","courtname":"Sampleaddinfo2","address":"Sampleaddressaddinfo3","tipology":"Covered","__v":0,"updated_at":"2016-11-22T08:54:13.558Z","created_at":"2016-11-22T08:54:13.546Z","location":[2.152,41.391]},{"_id":"58340310a42108255c13311c","courtname":"sampleadd1","address":"sampleaddressadd1","__v":0,"updated_at":"2016-11-22T08:34:24.194Z","created_at":"2016-11-22T08:34:24.183Z","location":[2.1729903,41.379799]},{"_id":"5834008789948720044627ea","courtname":"asdas","address":"asdasd","__v":0,"updated_at":"2016-11-22T08:23:35.634Z","created_at":"2016-11-22T08:23:35.624Z","location":[2.169,41.396]},{"_id":"5833ff3988db2832544f0ce7","courtname":"asfasd","address":"asfasf","__v":0,"updated_at":"2016-11-22T08:18:01.114Z","created_at":"2016-11-22T08:18:01.112Z","location":[2.174,41.397]},{"_id":"5833ff1f88db2832544f0ce6","courtname":"asdasf","address":"asfasfsa","__v":0,"updated_at":"2016-11-22T08:17:35.007Z","created_at":"2016-11-22T08:17:35.002Z","location":[2.158,41.396]},{"_id":"5833ff0688db2832544f0ce5","courtname":"alghasl","address":"aosfjsa","__v":0,"updated_at":"2016-11-22T08:17:10.838Z","created_at":"2016-11-22T08:17:10.828Z","location":[2.166,41.404]},{"_id":"583373b64270a934d89a4968","courtname":"asf","address":"asfas","__v":0,"updated_at":"2016-11-21T22:22:46.441Z","created_at":"2016-11-21T22:22:46.431Z","location":[2.173,41.373]},{"_id":"5833733ae78fbf31cc68fe3e","courtname":"asq","address":"asq","__v":0,"updated_at":"2016-11-21T22:20:42.034Z","created_at":"2016-11-21T22:20:42.022Z","location":[2.16,41.373]},{"_id":"58337304dfe5810804edeea2","courtname":"aass","address":"wq","__v":0,"updated_at":"2016-11-21T22:19:48.503Z","created_at":"2016-11-21T22:19:48.499Z","location":[2.151,41.38]},{"_id":"583372f3dfe5810804edeea1","courtname":"aaa","address":"aa","__v":0,"updated_at":"2016-11-21T22:19:31.048Z","created_at":"2016-11-21T22:19:31.035Z","location":[2.18,41.38]},{"_id":"58337285a1df793414bdd8f3","courtname":"sample1","address":"sample1","__v":0,"updated_at":"2016-11-21T22:17:41.332Z","created_at":"2016-11-21T22:17:41.315Z","location":[2.167,41.38]}
+[
+  {
+    "_id": "583c736a2cb05842482ed0c0",
+    "courtname": "Testing",
+    "address": "C/testingicon",
+    "tipology": "Covered",
+    "__v": 0,
+    "updated_at": "2016-11-28T18:11:54.372Z",
+    "created_at": "2016-11-28T18:11:54.359Z",
+    "location": [
+      2.145,
+      41.39
+    ]
+  },
+  {
+    "_id": "583beda43f70da40dc84a857",
+    "courtname": "Zoo Court",
+    "address": "Ciutadella",
+    "tipology": "Covered",
+    "__v": 0,
+    "updated_at": "2016-11-28T08:41:08.396Z",
+    "created_at": "2016-11-28T08:41:08.385Z",
+    "location": [
+      2.189,
+      41.386
+    ]
+  },
+  {
+    "_id": "583beb09c77a02107ce104d0",
+    "courtname": "Jardins de Brossa Court",
+    "address": "aadada",
+    "tipology": "Covered",
+    "__v": 0,
+    "updated_at": "2016-11-28T08:30:01.646Z",
+    "created_at": "2016-11-28T08:30:01.630Z",
+    "location": [
+      2.167,
+      41.368
+    ]
+  },
+  {
+    "_id": "58385f2085cfb41f50e1fdea",
+    "courtname": "Ruben",
+    "address": "Ruben",
+    "tipology": "Uncovered",
+    "__v": 0,
+    "updated_at": "2016-11-25T15:56:16.328Z",
+    "created_at": "2016-11-25T15:56:16.313Z",
+    "location": [
+      2.143,
+      41.395
+    ]
+  },
+  {
+    "_id": "5837eea281b12c25b015153f",
+    "courtname": "testing5",
+    "address": "C/Sample",
+    "tipology": "Uncovered",
+    "__v": 0,
+    "updated_at": "2016-11-25T07:56:18.371Z",
+    "created_at": "2016-11-25T07:56:18.360Z",
+    "location": [
+      2.117,
+      41.379
+    ]
+  },
+  {
+    "_id": "5837edbabe480e1bec4b91b5",
+    "courtname": "testingfriday",
+    "address": "newaddress",
+    "tipology": "Uncovered",
+    "__v": 0,
+    "updated_at": "2016-11-25T07:52:26.804Z",
+    "created_at": "2016-11-25T07:52:26.766Z",
+    "location": [
+      2.128,
+      41.377
+    ]
+  },
+  {
+    "_id": "58370378c2929f0154e8fa47",
+    "courtname": "testing6",
+    "address": "testingadress",
+    "tipology": "Covered",
+    "__v": 0,
+    "updated_at": "2016-11-24T15:12:56.496Z",
+    "created_at": "2016-11-24T15:12:56.485Z",
+    "location": [
+      2.119,
+      41.395
+    ]
+  },
+  {
+    "_id": "5836ec4cc077023774aead22",
+    "courtname": "testinginfowindow2",
+    "address": "testinginfowindow2",
+    "tipology": "Covered",
+    "__v": 0,
+    "updated_at": "2016-11-24T13:34:04.283Z",
+    "created_at": "2016-11-24T13:34:04.272Z",
+    "location": [
+      2.1729,
+      41.379
+    ]
+  },
+  {
+    "_id": "5836ebb9041cea095c73cfa7",
+    "courtname": "testinginfowindow1",
+    "address": "testingadressinfowindow1",
+    "tipology": "Uncovered",
+    "__v": 0,
+    "updated_at": "2016-11-24T13:31:37.606Z",
+    "created_at": "2016-11-24T13:31:37.595Z",
+    "location": [
+      2.111,
+      41.38
+    ]
+  },
+  {
+    "_id": "5836eb51af71933554b80610",
+    "courtname": "test1",
+    "address": "test2",
+    "tipology": "Covered",
+    "__v": 0,
+    "updated_at": "2016-11-24T13:29:53.920Z",
+    "created_at": "2016-11-24T13:29:53.917Z",
+    "location": [
+      2.116,
+      41.388
+    ]
+  },
+  {
+    "_id": "5836eb39af71933554b8060f",
+    "courtname": "testing4",
+    "address": "testingaddress",
+    "tipology": "Covered",
+    "__v": 0,
+    "updated_at": "2016-11-24T13:29:29.736Z",
+    "created_at": "2016-11-24T13:29:29.724Z",
+    "location": [
+      2.152,
+      41.389
+    ]
+  },
+  {
+    "_id": "5836d20174508b259cde8387",
+    "courtname": "Danimemira",
+    "address": "danimemirafijamente",
+    "tipology": "Uncovered",
+    "__v": 0,
+    "updated_at": "2016-11-24T11:41:53.476Z",
+    "created_at": "2016-11-24T11:41:53.466Z",
+    "location": [
+      2.129,
+      41.39
+    ]
+  },
+  {
+    "_id": "5836cf212564571a70f6d332",
+    "courtname": "aa",
+    "address": "aaa",
+    "tipology": "Covered",
+    "__v": 0,
+    "updated_at": "2016-11-24T11:29:37.274Z",
+    "created_at": "2016-11-24T11:29:37.263Z",
+    "location": [
+      2.15,
+      41.399
+    ]
+  },
+  {
+    "_id": "5836c76dfc43d8069cab535b",
+    "courtname": "Montjuic palace",
+    "address": "asfasf",
+    "tipology": "Covered",
+    "__v": 0,
+    "updated_at": "2016-11-24T10:56:45.206Z",
+    "created_at": "2016-11-24T10:56:45.189Z",
+    "location": [
+      2.149,
+      41.372
+    ]
+  },
+  {
+    "_id": "5836a76c8cc0c434d40cbd1a",
+    "courtname": "sdfdsf",
+    "address": "sdfsdf",
+    "tipology": "Covered",
+    "__v": 0,
+    "updated_at": "2016-11-24T08:40:12.772Z",
+    "created_at": "2016-11-24T08:40:12.762Z",
+    "location": [
+      2.131,
+      41.38
+    ]
+  },
+  {
+    "_id": "5836a69b5728d1179800c974",
+    "courtname": "Sdsd",
+    "address": "sdsd",
+    "tipology": "Covered",
+    "__v": 0,
+    "updated_at": "2016-11-24T08:36:43.535Z",
+    "created_at": "2016-11-24T08:36:43.524Z",
+    "location": [
+      2.144,
+      41.372
+    ]
+  },
+  {
+    "_id": "5836a436dd59e7241890a168",
+    "courtname": "ajsfhbsj",
+    "address": "odsahgas",
+    "tipology": "Uncovered",
+    "__v": 0,
+    "updated_at": "2016-11-24T08:26:30.682Z",
+    "created_at": "2016-11-24T08:26:30.664Z",
+    "location": [
+      2.173,
+      41.389
+    ]
+  },
+  {
+    "_id": "58361dd64572e915a486b399",
+    "courtname": "SantGervasi",
+    "address": "address",
+    "tipology": "Uncovered",
+    "__v": 0,
+    "updated_at": "2016-11-23T22:53:10.367Z",
+    "created_at": "2016-11-23T22:53:10.357Z",
+    "location": [
+      2.135,
+      41.399
+    ]
+  },
+  {
+    "_id": "58361bfdf9a7582290bc1459",
+    "courtname": "IsThatWorking?",
+    "address": "asfasafa",
+    "tipology": "Covered",
+    "__v": 0,
+    "updated_at": "2016-11-23T22:45:17.921Z",
+    "created_at": "2016-11-23T22:45:17.910Z",
+    "location": [
+      2.16,
+      41.385
+    ]
+  },
+  {
+    "_id": "583591c3ecb37a00ec5e2df1",
+    "courtname": "ejemplo dani",
+    "address": "ejemplodaniaddress",
+    "tipology": "Covered",
+    "__v": 0,
+    "updated_at": "2016-11-23T12:55:31.827Z",
+    "created_at": "2016-11-23T12:55:31.797Z",
+    "location": [
+      2.141,
+      41.402
+    ]
+  },
+  {
+    "_id": "583457083293d73228b6cf4a",
+    "courtname": "asgasg",
+    "address": "asgsagsag",
+    "tipology": "Uncovered",
+    "__v": 0,
+    "updated_at": "2016-11-22T14:32:40.188Z",
+    "created_at": "2016-11-22T14:32:40.177Z",
+    "location": [
+      2.142,
+      41.383
+    ]
+  },
+  {
+    "_id": "5834512bf4d60308e09de5aa",
+    "courtname": "AAAA",
+    "address": "BBBBBBBB",
+    "tipology": "Covered",
+    "__v": 0,
+    "updated_at": "2016-11-22T14:07:39.964Z",
+    "created_at": "2016-11-22T14:07:39.954Z",
+    "location": [
+      2.187,
+      41.391
+    ]
+  },
+  {
+    "_id": "58344f937b66e11d488a0aaa",
+    "courtname": "BBBB",
+    "address": "BBBBB",
+    "tipology": "Uncovered",
+    "__v": 0,
+    "updated_at": "2016-11-22T14:00:51.793Z",
+    "created_at": "2016-11-22T14:00:51.781Z",
+    "location": [
+      2.163,
+      41.392
+    ]
+  },
+  {
+    "_id": "58344f742484a233e4c866f8",
+    "courtname": "AAAAAAA",
+    "address": "AAAAAAA",
+    "tipology": "Covered",
+    "__v": 0,
+    "updated_at": "2016-11-22T14:00:20.134Z",
+    "created_at": "2016-11-22T14:00:20.117Z",
+    "location": [
+      2.138,
+      41.388
+    ]
+  },
+  {
+    "_id": "583408381f1b1c2d5404b9a3",
+    "courtname": "addlastinfoabouttipo",
+    "address": "asfasg",
+    "tipology": "Covered",
+    "__v": 0,
+    "updated_at": "2016-11-22T08:56:24.541Z",
+    "created_at": "2016-11-22T08:56:24.530Z",
+    "location": [
+      2.186,
+      41.396
+    ]
+  },
+  {
+    "_id": "583407d6c36dd4257886f951",
+    "courtname": "SampleAdd4",
+    "address": "Sampleaddress42",
+    "tipology": "Uncovered",
+    "__v": 0,
+    "updated_at": "2016-11-22T08:54:46.789Z",
+    "created_at": "2016-11-22T08:54:46.786Z",
+    "location": [
+      2.175,
+      41.393
+    ]
+  },
+  {
+    "_id": "583407b5c36dd4257886f950",
+    "courtname": "Sampleaddinfo2",
+    "address": "Sampleaddressaddinfo3",
+    "tipology": "Covered",
+    "__v": 0,
+    "updated_at": "2016-11-22T08:54:13.558Z",
+    "created_at": "2016-11-22T08:54:13.546Z",
+    "location": [
+      2.152,
+      41.391
+    ]
+  },
+  {
+    "_id": "58340310a42108255c13311c",
+    "courtname": "sampleadd1",
+    "address": "sampleaddressadd1",
+    "__v": 0,
+    "updated_at": "2016-11-22T08:34:24.194Z",
+    "created_at": "2016-11-22T08:34:24.183Z",
+    "location": [
+      2.1729903,
+      41.379799
+    ]
+  },
+  {
+    "_id": "5834008789948720044627ea",
+    "courtname": "asdas",
+    "address": "asdasd",
+    "__v": 0,
+    "updated_at": "2016-11-22T08:23:35.634Z",
+    "created_at": "2016-11-22T08:23:35.624Z",
+    "location": [
+      2.169,
+      41.396
+    ]
+  },
+  {
+    "_id": "5833ff3988db2832544f0ce7",
+    "courtname": "asfasd",
+    "address": "asfasf",
+    "__v": 0,
+    "updated_at": "2016-11-22T08:18:01.114Z",
+    "created_at": "2016-11-22T08:18:01.112Z",
+    "location": [
+      2.174,
+      41.397
+    ]
+  },
+  {
+    "_id": "5833ff1f88db2832544f0ce6",
+    "courtname": "asdasf",
+    "address": "asfasfsa",
+    "__v": 0,
+    "updated_at": "2016-11-22T08:17:35.007Z",
+    "created_at": "2016-11-22T08:17:35.002Z",
+    "location": [
+      2.158,
+      41.396
+    ]
+  },
+  {
+    "_id": "5833ff0688db2832544f0ce5",
+    "courtname": "alghasl",
+    "address": "aosfjsa",
+    "__v": 0,
+    "updated_at": "2016-11-22T08:17:10.838Z",
+    "created_at": "2016-11-22T08:17:10.828Z",
+    "location": [
+      2.166,
+      41.404
+    ]
+  },
+  {
+    "_id": "583373b64270a934d89a4968",
+    "courtname": "asf",
+    "address": "asfas",
+    "__v": 0,
+    "updated_at": "2016-11-21T22:22:46.441Z",
+    "created_at": "2016-11-21T22:22:46.431Z",
+    "location": [
+      2.173,
+      41.373
+    ]
+  },
+  {
+    "_id": "5833733ae78fbf31cc68fe3e",
+    "courtname": "asq",
+    "address": "asq",
+    "__v": 0,
+    "updated_at": "2016-11-21T22:20:42.034Z",
+    "created_at": "2016-11-21T22:20:42.022Z",
+    "location": [
+      2.16,
+      41.373
+    ]
+  },
+  {
+    "_id": "58337304dfe5810804edeea2",
+    "courtname": "aass",
+    "address": "wq",
+    "__v": 0,
+    "updated_at": "2016-11-21T22:19:48.503Z",
+    "created_at": "2016-11-21T22:19:48.499Z",
+    "location": [
+      2.151,
+      41.38
+    ]
+  },
+  {
+    "_id": "583372f3dfe5810804edeea1",
+    "courtname": "aaa",
+    "address": "aa",
+    "__v": 0,
+    "updated_at": "2016-11-21T22:19:31.048Z",
+    "created_at": "2016-11-21T22:19:31.035Z",
+    "location": [
+      2.18,
+      41.38
+    ]
+  },
+  {
+    "_id": "58337285a1df793414bdd8f3",
+    "courtname": "sample1",
+    "address": "sample1",
+    "__v": 0,
+    "updated_at": "2016-11-21T22:17:41.332Z",
+    "created_at": "2016-11-21T22:17:41.315Z",
+    "location": [
+      2.167,
+      41.38
+    ]
+  }
+]

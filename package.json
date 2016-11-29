@@ -23,5 +23,8 @@
     "mongodb": "^2.2.11",
     "mongoose": "^4.6.8",
     "pug": "^2.0.0-beta6"
+  },
+  "engines" : {
+    "node" : "6.9.1"
   }
 }
