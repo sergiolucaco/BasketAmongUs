@@ -1,64 +1,27 @@
 <div class="row">
     <div class="col-md-5">
 
-       <div class="panel panel-default">
+        <div class="panel panel-default">
+            <div id ="panelDetailView" class="panel-heading">
+                <h2 class="panel-title text-center">Detail view of the basketball court selected</h2>    
+            </div>
+            <div class ="panel-body">
+                <img id = " defImgDetailView " class ="img-responsive block-center" src="./defaultphoto_bcourt.jpg" >
+                <h4 class="titleDetailview"> Court Name </h4> 
+                <p>{{ singleCourt.courtname }}</p>
+                <h4 class="titleDetailview"> Adress </h4> 
+                <p>{{ singleCourt.address }}</p>
+                <h4 class="titleDetailview"> Tipology </h4> 
+                <p>{{ singleCourt.tipology }}</p>
+                <h4 class="titleDetailview"> Player Comments<button id = "buttonsDetailView" type="submit" class="btn btn-danger" ng-click="">Add comment</button> </h4>
+                <textarea class="form-control" rows="3" placeholder="Have you played in this court recently? Don't hesitate and leave a comment"></textarea>
+                <button id = "buttonsDetailView" type="submit" class="btn btn-danger" ng-click="">Back to Home</button>
+            </div>
 
-        <!-- Panel Title -->
-        <div class="panel-heading">
-            <h2 class="panel-title text-center">Detail view of basketball court </h2>
+               <!-- Query button. Note that its tied to queryUsers() function from queryCtrl.  -->
         </div>
-
-        <!-- Panel Body -->
-        <div class="panel-body">         
-
-        
-            <img class =" defImgDetailView" src="./defaultphoto_bcourt.jpg" >
-            
-
-            <div>
-
-                <h3>Name : {{ singleCourt.courtname }} </h3>
-
-            </div>
-
-            <div>
-
-                <h3>Adress : {{ singleCourt.address }} </h3>
-
-            </div>
-
-            <div>
-
-                <h3>Tipology : {{ singleCourt.tipology }} </h3>
-
-            </div>
-
-            <div>
-                
-                <h4>Have you played in this court recently?</h4>
-                <textarea class="form-control" rows="3">Don't hesitate and leave a comment</textarea>
-
-            </div>
-
-
-
-
-            <!-- Query button. Note that its tied to queryUsers() function from queryCtrl.  -->
-            <button type="submit" class="btn btn-primary" ng-click="">Back to Home!</button>
-
-        </div>
-
-        <!-- Footer panel for displaying count. Note how it will only display if queryCount is greater than 0 -->
-         <!--    <div ng-show="queryCount>0" class="panel-footer">
-                <p class="text-center"> We Found {{queryCount}} courts.</p>
-            </div> -->
-        </div>
-
-
-
-
-
     </div>
+
     <div class="col-md-7">
         <ng-map id="detail-map" center ="[{{ singleCourt.location[1] }}, {{ singleCourt.location[0] }}]">
             <custom-marker position ="[{{ singleCourt.location[1] }}, {{ singleCourt.location[0] }}]">
@@ -69,4 +32,6 @@
             
         </ng-map> 
     </div>
+
 </div>
+

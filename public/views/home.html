@@ -13,7 +13,7 @@
         <div class="col-md-5">
             <div class="panel panel-default">
                 <!-- Panel Title -->
-                <div class="panel-heading">
+                <div id ="panelDetailView" class="panel-heading">
                  <h2 class="panel-title text-center">Don't see your b-court? Drag your marker through the map and fill this form to add it then ! <span class="glyphicon glyphicon-pencil"></span></h2>
                 </div>
                 <!-- Panel Body -->
@@ -56,7 +56,7 @@
                         </div>
                         
                         <!-- Submit button. Note that its tied to createUser() function from addCtrl. Also note ng-disabled logic which prevents early submits.  -->
-                        <button type="submit" class="btn btn-danger btn-block" ng-click="createCourt()" ng-disabled="addForm.$invalid">Submit</button>
+                        <button id="buttonsForm" type="submit" class="btn btn-danger btn-block" ng-click="createCourt()" ng-disabled="addForm.$invalid">Submit</button>
                     </form>
                 </div>
             </div>
