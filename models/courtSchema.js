@@ -10,7 +10,7 @@ var courtSchema = new Schema({
     tipology: {type: String, required : true},
     created_at: {type: Date, default: Date.now},
     updated_at: {type: Date, default: Date.now}
-});
+}, { "collection" : "basketcourts" });
 
 // Sets the created_at parameter equal to the current time
 courtSchema.pre('save', function(next){
@@ -22,5 +22,5 @@ courtSchema.pre('save', function(next){
     next();
 });
 
-// Exports the UserSchema for use elsewhere. Sets the MongoDB collection to be used as: "basketcourtsample"
+// Exports the UserSchema for use elsewhere. Sets the MongoDB collection to be used as: "basketcourt"
 module.exports = mongoose.model('basketcourt', courtSchema);
