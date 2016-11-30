@@ -13,12 +13,12 @@ angular.module('ServicesModule')
     	}
 
         function postQuery ( oQuery ) {
-            return $http.post('/filteredCourts', oQuery)
+            return $http.post('/api/courts/filtered', oQuery)
                                 .then( results => results.data)    	    
         }
 
         function getCourtsDetails ( id ){
-            const url = `/detailCourt/${id}`;
+            const url = `/api/court/${id}`;
             return $http.get( url ).then( d => d.data )
             
         }
