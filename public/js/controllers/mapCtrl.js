@@ -69,7 +69,7 @@ angular.module('ControllersModule')
 					MapService.getHomeMap()
 						.then( map => {
 							MapService.createMarker( map, { latlon, message } ) //Create a marker with the location captured in the form field
-	                	
+							MapService.getPageReload();
 					})
 						
 	                

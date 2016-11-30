@@ -4,9 +4,8 @@ angular.module('ControllersModule')
 		$scope,
 		$routeParams,
 		MapService,
-		DataService,
-		geolocation
-	){
+		DataService
+		){
 
 		const id = $routeParams.id;
 
@@ -15,7 +14,6 @@ angular.module('ControllersModule')
 		.then( singleCourt => {
 			$scope.singleCourt = singleCourt
 			return singleCourt
-			// $scope.currentDetailPosition = [singleCourt.location[1], singleCourt.location[0] ]
 
 		})
 		.catch( console.log )

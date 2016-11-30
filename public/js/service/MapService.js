@@ -62,6 +62,10 @@ angular.module('ServicesModule')
             return marker;
         }
 
+        function getPageReload (){
+            return window.location.reload();
+        }
+
         function getContentWindow(courtname, address, tipology,_id) {
             return `<p><b>Courtname</b>: <a href ="#/detailCourt/${_id}">${courtname}</a><br><b>Address</b>: ${address} <br><b>Tipology</b>: ${tipology}</p>`;
         }
@@ -102,6 +106,6 @@ angular.module('ServicesModule')
 
 
 
-        return { createMarker, getHomeMap, getSearchMap, zoomToIncludeMarkers, convertToMapPoints, getContentWindow, getDetailMap } 
+        return { createMarker, getHomeMap, getSearchMap, zoomToIncludeMarkers, convertToMapPoints, getContentWindow, getDetailMap, getPageReload } 
 
     })
