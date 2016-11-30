@@ -23,4 +23,4 @@ courtSchema.pre('save', function(next){
 });
 
 // Exports the UserSchema for use elsewhere. Sets the MongoDB collection to be used as: "basketcourtsample"
-module.exports = mongoose.model('basketcourtsample', courtSchema);
+module.exports = mongoose.model('basketcourt', courtSchema);
