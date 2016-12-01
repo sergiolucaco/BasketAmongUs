@@ -1,5 +1,7 @@
-#home-map {
-	height: 450px;
+#home-map,#search-map  {
+	height: 490px;
+	margin-bottom: 20px;
+
 }
 
 /*  GENERAL CHANGES   */
@@ -21,6 +23,10 @@
 	background-color: #FC6355;
 	color : black;
 }
+
+footer {
+	margin-top: 5px;
+}
 /*--------------------------------------------*/
 
 /*  NAVBAR   */
@@ -29,6 +35,7 @@
 	min-height: 100px !important;
 	background-color: #4C4C4C;
 	border: none;
+	border-radius: 0px;
 }
 
 #logoNav {
@@ -42,6 +49,7 @@
 }
 
 #navTitle {
+	font-size: 22px;
 	position:relative;
 	letter-spacing: 2px;
 	color: orange;
@@ -95,15 +103,11 @@ h4 > #buttonsDetailView {
 /*  NAVBAR   */
 /*--------------------------------------------*/
 
-
-
-
-
-@media (min-width:280px) and (max-width: 400px){
+@media (min-width:320px) and (max-width: 480px){
 
 #navTitle{
 		
-		top:-50px;
+		top:-40px;
 		right: -130px;
 		font-size: 22px;
 
@@ -111,7 +115,36 @@ h4 > #buttonsDetailView {
 
 .navbar-nav > li {
     margin-top: -38px;
+    bottom: -20px;
     margin-left: -20px;
+}
+
+
+#logoNav {
+	margin-top: 0px;
+	margin-bottom: -25px;
+}
+
+#home-map,#search-map{
+	margin-bottom: 25px;
+}
+
+
+}
+
+
+@media (min-width:480px) and (max-width: 767px){
+
+#navTitle{
+	right: 10%;
+	}
+
+.navbar-nav > li {
+    float: left !important;
+    margin-top: -28px;
+    margin-left: -20px;
+    top : -25px;
+    bottom: -0px;
 }
 
 /*.navbar-nav > li:nth-child(3) {
@@ -122,13 +155,15 @@ h4 > #buttonsDetailView {
 
 
 #logoNav {
-	margin-top: 10px;
-	margin-bottom: -10px;
+	margin-top: 0px;
+	margin-bottom: -25px;
 }
 
-#home-map{
-	margin-bottom: 20px;
+#home-map,#search-map{
+	margin-bottom: 25px;
 }
 
 
 }
+
+

@@ -1,8 +1,7 @@
 angular.module('ControllersModule')
 	.controller('mapCtrl', function($rootScope, $scope, MapService, DataService){
 
-		console.log("mapCtrl...")
-
+		
 		$rootScope.formData = $rootScope.formData || {}
 
 

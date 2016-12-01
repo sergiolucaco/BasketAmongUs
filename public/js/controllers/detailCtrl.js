@@ -4,7 +4,8 @@ angular.module('ControllersModule')
 		$scope,
 		$routeParams,
 		MapService,
-		DataService
+		DataService,
+		$location
 		){
 
 		const id = $routeParams.id;
@@ -17,5 +18,9 @@ angular.module('ControllersModule')
 
 		})
 		.catch( console.log )
+
+		$scope.redirectToHome = function (){
+			return $location.path('/');
+		}
 
 	})
