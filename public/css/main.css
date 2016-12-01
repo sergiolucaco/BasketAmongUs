@@ -2,11 +2,49 @@
 	height: 385px;
 }
 
-#logoimg {
-	height: 100%;
-	width: 30%;
+/*  GENERAL CHANGES   */
+/*--------------------------------------------*/
+
+* {
+	font-family: 'Fjalla One';
+}
+#buttonsForm {
+	background-color: white;
+	color: black;
+	border: 2px solid #FC6355;
 }
 
+@-ms-viewport{
+  width: device-width;
+}
+
+/*--------------------------------------------*/
+
+/*  NAVBAR   */
+/*--------------------------------------------*/
+.navbarIndex {
+	min-height: 100px !important;
+}
+
+#logoNav {
+	height: 100px;
+	
+}
+
+.navbar-nav > li {
+    float: left !important;
+    margin-top: 25px;
+}
+
+#navTitle {
+	position:relative;
+
+}
+/*--------------------------------------------*/
+
+
+/*  DETAIL VIEW   */
+/*--------------------------------------------*/
 #detail-map {
 	height: 100%;
 	width: 100%;
@@ -15,12 +53,6 @@
 #panelDetailView{
 	background-color: #FC6355;
 	color : black;
-}
-
-#buttonsForm {
-	background-color: white;
-	color: black;
-	border: 2px solid #FC6355;
 }
 
 .titleDetailview{
@@ -48,7 +80,36 @@ h4 > #buttonsDetailView {
 	margin-top : 3%;
 }
 
-* {
-	font-family: 'Fjalla One';
+/*--------------------------------------------*/
+
+
+/*  MEDIA QUERIES   */
+/*  NAVBAR   */
+/*--------------------------------------------*/
+
+@media (min-width:320px ) and (max-width: 770px ){
+
+
+.navbar-nav > li {
+    margin-top: -38px;
 }
 
+#logoNav {
+	margin-top: 10px;
+	margin-bottom: -10px;
+}
+
+
+
+}
+
+@media (min-width:280px) and (max-width: 400px){
+
+	#navTitle{
+		position: absolute;
+		top:6px;
+
+	}
+
+
+}

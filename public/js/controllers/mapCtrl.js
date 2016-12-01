@@ -11,8 +11,9 @@ angular.module('ControllersModule')
 
             $rootScope.myLatitude = position.coords.latitude;
             $rootScope.myLongitude = position.coords.longitude;
-            $rootScope.formData.latitude = $rootScope.myLatitude.toFixed(3) || 41.379;
-        	$rootScope.formData.longitude = $rootScope.myLongitude.toFixed(3) || 2.172;
+             
+            $rootScope.formData.latitude = position.coords.latitude.toFixed(3) || 41.379;
+        	$rootScope.formData.longitude = position.coords.longitude.toFixed(3) || 2.172;
            
         });
 

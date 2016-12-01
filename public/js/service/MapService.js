@@ -12,9 +12,6 @@ angular.module('ServicesModule')
         // Array of locations obtained from API calls
         var locations = [];
 
-        // Selected Location 
-        var selectedLat; 
-        var selectedLong;
 
         function getCurrentPosition() {
             return $geolocation.getCurrentPosition({
@@ -63,7 +60,7 @@ angular.module('ServicesModule')
 
                 // When clicked, open the selected marker's message
                 location.message.open(map, marker);
-                
+
             });
 
             return marker;
