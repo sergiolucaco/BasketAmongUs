@@ -1,14 +1,25 @@
 // Creates the addCtrl Module and Controller. Note that it depends on 'geolocation' and 'MapService' modules.
 angular.module('ControllersModule')
-.controller('searchCtrl', function($scope, $rootScope, /* geolocation, */ MapService, DataService){
+.controller('searchCtrl', function($scope, $rootScope, MapService, DataService){
 
         // Initializes Variables
         // ----------------------------------------------------------------------------
-        $scope.formData = {};
+       $rootScope.formData = $rootScope.formData || {}
+
+        MapService.getCurrentPosition()
+            .then(function(position) {
+
+                $rootScope.myLatitude = position.coords.latitude;
+                $rootScope.myLongitude = position.coords.longitude;
+
+                $rootScope.formData.latitude = position.coords.latitude.toFixed(3) || 41.379;
+                $rootScope.formData.longitude = position.coords.longitude.toFixed(3) || 2.172;
+           
+        });
+
+
         var queryBody = {};
 
-        $scope.formData.latitude = 41.379;
-        $scope.formData.longitude = 2.1729; 
 
         var markersShowed;
 

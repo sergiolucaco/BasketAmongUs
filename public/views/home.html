@@ -4,7 +4,7 @@
         <div class="col-md-7">
             <div id="map_courts">
                 <ng-map id="home-map" on-click="">
-                    <marker position="41.379799,2.1729903" animation="DROP"
+                    <marker position="{{myLatitude}},{{myLongitude}}" animation="DROP"
           draggable="true" on-dragend="getCurrentCoords()"></marker>
                 </ng-map>
             </div>
@@ -14,7 +14,7 @@
             <div class="panel panel-default">
                 <!-- Panel Title -->
                 <div id ="panelDetailView" class="panel-heading">
-                 <h2 class="panel-title text-center">Don't see your b-court? Drag your marker through the map and fill this form to add it then ! <span class="glyphicon glyphicon-pencil"></span></h2>
+                 <h2 class="panel-title text-center">Don't see your b-court? Drag your marker through the map and fill this form to add it! <span class="glyphicon glyphicon-pencil"></span></h2>
                 </div>
                 <!-- Panel Body -->
                 <div class="panel-body">

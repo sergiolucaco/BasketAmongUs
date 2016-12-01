@@ -1,17 +1,23 @@
 angular.module('ControllersModule')
-	.controller('mapCtrl', function($rootScope, $scope, MapService, DataService, geolocation){
+	.controller('mapCtrl', function($rootScope, $scope, MapService, DataService){
 
 		console.log("mapCtrl...")
 
-		$scope.formData = {};
+		$rootScope.formData = $rootScope.formData || {}
 
-		$scope.formData.latitude = 41.379;
-		$scope.formData.longitude = 2.1729; 
 
-		var coords = {};
+		MapService.getCurrentPosition()
+			.then(function(position) {
 
-		var lat = 0;
-		var long = 0;
+            $rootScope.myLatitude = position.coords.latitude;
+            $rootScope.myLongitude = position.coords.longitude;
+            $rootScope.formData.latitude = $rootScope.myLatitude.toFixed(3) || 41.379;
+        	$rootScope.formData.longitude = $rootScope.myLongitude.toFixed(3) || 2.172;
+           
+        });
+
+
+
 
 		//Read all the documents listed on the collection DB and return the map created in MapService. The next step
 		// is read that map and transform data to be readable inside google maps and add markers in every location.
@@ -29,6 +35,7 @@ angular.module('ControllersModule')
 		    })
 
 			
+		
 
 		// Capture current coords at the end of the marker event "dragend" and put those values in the inputs.
 		$rootScope.getCurrentCoords = function (e) {

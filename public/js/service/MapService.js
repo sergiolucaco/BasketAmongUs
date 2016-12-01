@@ -1,6 +1,6 @@
 // Creates the gservice factory. This will be the primary means by which we interact with Google Maps
 angular.module('ServicesModule')
-    .factory('MapService', function($rootScope, NgMap, DataService){
+    .factory('MapService', function($rootScope, NgMap, DataService,$geolocation){
         //This service interacts and deals with google maps API.
 
         // Initialize Variables
@@ -13,8 +13,15 @@ angular.module('ServicesModule')
         var locations = [];
 
         // Selected Location 
-        var selectedLat = 41.379799;
-        var selectedLong =  2.1729903;
+        var selectedLat; 
+        var selectedLong;
+
+        function getCurrentPosition() {
+            return $geolocation.getCurrentPosition({
+                timeout: 60000
+             })
+        }
+
 
        // Generate home map .
         function getHomeMap () {
@@ -92,11 +99,7 @@ angular.module('ServicesModule')
                         content: contentString,
                         maxWidth: 320
                     })
-                    // ,
-                    // courtname: court.courtname,
-                    // address: court.address,
-                    // tipology: court.tipology
-                        
+ 
                 });
         }
         // location is now an array populated with records in Google Maps format
@@ -106,6 +109,6 @@ angular.module('ServicesModule')
 
 
 
-        return { createMarker, getHomeMap, getSearchMap, zoomToIncludeMarkers, convertToMapPoints, getContentWindow, getDetailMap, getPageReload } 
+        return { getCurrentPosition, createMarker, getHomeMap, getSearchMap, zoomToIncludeMarkers, convertToMapPoints, getContentWindow, getDetailMap, getPageReload } 
 
     })

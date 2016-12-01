@@ -17,6 +17,7 @@
   ],
   "dependencies": {
     "ngmap": "^1.17.8",
-    "angularjs-geolocation": "^0.1.1"
+    "angularjs-geolocation": "^0.1.1",
+    "ngGeolocation": "^0.0.8"
   }
 }
