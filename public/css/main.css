@@ -1,9 +1,12 @@
-#map_courts {
-	height: 385px;
+#home-map {
+	height: 450px;
 }
 
 /*  GENERAL CHANGES   */
 /*--------------------------------------------*/
+@-ms-viewport{
+  width: device-width;
+}
 
 * {
 	font-family: 'Fjalla One';
@@ -14,16 +17,18 @@
 	border: 2px solid #FC6355;
 }
 
-@-ms-viewport{
-  width: device-width;
+#panelForm{
+	background-color: #FC6355;
+	color : black;
 }
-
 /*--------------------------------------------*/
 
 /*  NAVBAR   */
 /*--------------------------------------------*/
 .navbarIndex {
 	min-height: 100px !important;
+	background-color: #4C4C4C;
+	border: none;
 }
 
 #logoNav {
@@ -38,7 +43,9 @@
 
 #navTitle {
 	position:relative;
-
+	letter-spacing: 2px;
+	color: orange;
+	text-shadow: 3px -1px 2px rgba(198, 0, 0, 1);
 }
 /*--------------------------------------------*/
 
@@ -50,7 +57,8 @@
 	width: 100%;
 }
 
-#panelDetailView{
+
+#panelDetView{
 	background-color: #FC6355;
 	color : black;
 }
@@ -87,29 +95,40 @@ h4 > #buttonsDetailView {
 /*  NAVBAR   */
 /*--------------------------------------------*/
 
-@media (min-width:320px ) and (max-width: 770px ){
 
+
+
+
+@media (min-width:280px) and (max-width: 400px){
+
+#navTitle{
+		
+		top:-50px;
+		right: -130px;
+		font-size: 22px;
+
+	}
 
 .navbar-nav > li {
     margin-top: -38px;
+    margin-left: -20px;
 }
+
+/*.navbar-nav > li:nth-child(3) {
+   border: 1px solid red;
+   margin-left: 10px;
+}
+*/
+
 
 #logoNav {
 	margin-top: 10px;
 	margin-bottom: -10px;
 }
 
-
-
+#home-map{
+	margin-bottom: 20px;
 }
-
-@media (min-width:280px) and (max-width: 400px){
-
-	#navTitle{
-		position: absolute;
-		top:6px;
-
-	}
 
 
 }
