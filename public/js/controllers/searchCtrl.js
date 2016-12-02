@@ -4,8 +4,15 @@ angular.module('ControllersModule')
 
         // Initializes Variables
         // ----------------------------------------------------------------------------
-       $rootScope.formData = $rootScope.formData || {}
+        
+        $rootScope.formData = $rootScope.formData || {} ;
+        var queryBody = {};
+        var markersShowed;
 
+
+        //Get the logic setted in the MapService to get current position
+        // and connect those values into the inputs and the position of the marker setted with NgMap directive.
+        
         MapService.getCurrentPosition()
             .then(function(position) {
 
@@ -18,24 +25,13 @@ angular.module('ControllersModule')
         });
 
 
-        var queryBody = {};
-
-
-        var markersShowed;
-
-        
-
         // Functions
         // ----------------------------------------------------------------------------
-
- 
 
         // Take query parameters and incorporate into a JSON queryBody
         $scope.queryCourts = function(){
 
                 // Assemble Query Body
-
-
                 const { longitude,latitude,distance,covered,uncovered } = $scope.formData;
                 
                 const queryBody = {
@@ -51,6 +47,9 @@ angular.module('ControllersModule')
                 $scope.formData.covered ="";
                 $scope.formData.uncovered ="";
 
+            // With the filtered results the first thing that does the function is see if there are
+            //markers already to erase them if they are. The next step is charge the correct map and 
+            // then implement markers in every location result with google maps format and bounds. 
             
             DataService.postQuery( queryBody )
                 .then( queryResults => {

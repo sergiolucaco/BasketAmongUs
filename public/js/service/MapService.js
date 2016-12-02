@@ -52,7 +52,7 @@ angular.module('ServicesModule')
                 position: location.latlon,
                 map: map,
                 title: "Playable court",
-                icon: "../basketball.png",
+                icon: "../supportImages/basketball.png",
             });
 
             // For each marker created, add a listener that checks for clicks

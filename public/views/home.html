@@ -18,7 +18,7 @@
                 <div class="panel-body">
                     <!-- Creates Form (novalidate disables HTML validation, Angular will control) -->
                     <form name ="addForm" novalidate>
-                        <!-- Text Boxes and Other User Inputs. Note ng-model binds the values to Angular $scope -->
+                        <!-- Text Boxes and Other Court Inputs. Note ng-model binds the values to Angular $scope -->
                         <div class="form-group">
                             <label for="courtname">Court name <i class="fa fa-dribbble"></i> <span class="badge">All fields required</span></label>
                             <input type="text" class="form-control" id="courtname" placeholder="Court name should be put here.." ng-model="formData.courtname" required>
@@ -53,7 +53,7 @@
                             <input type="text" class="form-control" id="longitude" value="-98.350" ng-model="formData.longitude" readonly>
                         </div>
                         
-                        <!-- Submit button. Note that its tied to createUser() function from addCtrl. Also note ng-disabled logic which prevents early submits.  -->
+                        <!-- Submit button. Note that its tied to createCourt() function from addCtrl. Also note ng-disabled logic which prevents early submits.  -->
                         <button id="buttonsForm" type="submit" class="btn btn-danger btn-block" ng-click="createCourt()" ng-disabled="addForm.$invalid">Submit</button>
                     </form>
                 </div>

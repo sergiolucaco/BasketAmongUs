@@ -4,7 +4,9 @@ angular.module('ControllersModule')
 		
 		$rootScope.formData = $rootScope.formData || {}
 
-
+		//Get the logic setted in the MapService to get current position
+		// and connect those values into the inputs and the position of the marker setted with NgMap directive.
+		
 		MapService.getCurrentPosition()
 			.then(function(position) {
 
