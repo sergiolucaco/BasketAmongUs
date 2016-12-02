@@ -33,9 +33,9 @@ footer {
 /*--------------------------------------------*/
 .navbarIndex {
 	min-height: 100px !important;
-	background-color: #4C4C4C;
 	border: none;
 	border-radius: 0px;
+	background-image: url("../supportImages/header.jpg")
 }
 
 #logoNav {
@@ -48,12 +48,16 @@ footer {
     margin-top: 25px;
 }
 
+.navbar-inverse .navbar-nav>li>a {
+    color: black;
+}
+
 #navTitle {
 	font-size: 22px;
 	position:relative;
 	letter-spacing: 2px;
 	color: orange;
-	text-shadow: 3px -1px 2px rgba(198, 0, 0, 1);
+	text-shadow: 3px -1px 2px #000000;
 }
 /*--------------------------------------------*/
 
