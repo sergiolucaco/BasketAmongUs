@@ -10,7 +10,7 @@ angular.module('ControllersModule')
 
 		const id = $routeParams.id;
 
-		// In this case, a data service which allow us to filter through the db by id parameter is called .
+		// In this case, a data service allow us to filter through the db by id parameter is called .
 		DataService.getCourtsDetails( id )
 		.then( singleCourt => {
 			$scope.singleCourt = singleCourt
